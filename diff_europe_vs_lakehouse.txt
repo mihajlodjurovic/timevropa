@@ -1,0 +1,21 @@
+seeze_europe.html  vs  seeze_lakehouse.html
+
+────────────────────────────────────────────
+
+seeze_europe.html:
+  - Real data from MongoDB (1M European car listings, 12 countries)
+  - Needs server.py to run (API endpoints for compiling data)
+  - Loads binary files: europe_lakehouse_meta.json + europe_lakehouse_data.bin
+  - 7 steps: Compile → Pick → Price → Explain → Counterfactual → Deals → Benchmark
+  - Actual cars with real prices, makes, models, profits
+
+seeze_lakehouse.html:
+  - Fake/synthetic US data generated in the browser (no MongoDB needed)
+  - No server needed — just open the HTML file
+  - Simulates ~6M listings + 240M events with lakehouse-style storage
+  - Simpler, focused on proving the "reasoning engine" concept works
+  - Demo/sales tool to show why asking backward questions is faster
+
+Bottom line:
+  europe = the real product with actual data
+  lakehouse = a standalone demo that proves the concept with fake data

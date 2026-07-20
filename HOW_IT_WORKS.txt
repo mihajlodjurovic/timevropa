@@ -1,0 +1,39 @@
+SEEZE EUROPE — KAKO RADI
+=========================
+
+ARHITEKTURA (3 fajla):
+  - mini_server.py      (10 linija, Python HTTP server)
+  - seeze_europe.html   (sav UI + logika, JavaScript u browseru)
+  - europe_lakehouse_data.bin + europe_lakehouse_meta.json (podaci)
+
+
+PRINCIP:
+  1. Otvoris browser → http://localhost:8090/seeze_europe.html
+  2. Browser skine meta.json (39KB) + data.bin (36MB)
+  3. SVIH 1.000.000 listinga se parsira u browser memoriju (zero-copy TypedArrays)
+  4. Sva logika (deal discovery, pricing, benchmark, filteri) se izvrsava LOKALNO u browseru
+  5. Server vise NIJE potreban — samo je isporucio fajlove na pocetku
+
+
+PODACI:
+  - 1,000,000 oglasa iz 5 evropskih zemalja
+  - 1,865 segmenata (modeli automobila)
+  - Binarni format (36MB) — efikasan za prenos i parsiranje u browseru
+
+
+ISTO KAO LAKEHOUSE, SAMO SA PRAVIM PODACIMA:
+  - seeze_lakehouse.html generise LAZNE podatke u browseru (Web Worker)
+  - seeze_europe.html koristi PRAVE podatke iz baze
+  - Oba rade ISTO: sve u browseru, nema server logike, nema API poziva posle inicijalnog load-a
+
+
+POKRETANJE SERVERA:
+  cd /home/djura/boraproj
+  nohup /usr/bin/python3 -u mini_server.py > /tmp/server.log 2>&1 & disown
+
+  Server slusa na portu 8090.
+
+
+AZURIRANJE PODATAKA (kad treba svezi podaci iz baze):
+  Pokrenuti build skriptu koja kompajlira MongoDB → data.bin + meta.json.
+  Zameniti fajlove u /home/djura/boraproj/ i restartovati server.

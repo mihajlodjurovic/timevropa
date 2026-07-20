@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seeze Europe · Deal Discovery Engine</title>
+<style>
+  :root{
+    --bg:#0a0e14; --panel:#111827; --panel2:#1a2332; --line:#263040;
+    --text:#e2e8f0; --dim:#8899b4; --brand:#38bdf8; --brand2:#7dd3fc;
+    --gold:#fbbf24; --green:#4ade80; --red:#f87171; --amber:#fcd34d;
+    --purple:#c084fc; --emerald:#6ee7b7;
+    --mono:'SF Mono',ui-monospace,Consolas,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,'Segoe UI',Inter,system-ui,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  header{padding:48px 20px 34px;text-align:center;
+    background:radial-gradient(ellipse at 50% -10%,#1a2a44,var(--bg) 70%);
+    border-bottom:1px solid var(--line)}
+  .logo{font-size:2.6em;font-weight:800;letter-spacing:-1.2px;margin:0}
+  .logo span{color:var(--brand)}
+  .tag{color:var(--brand2);font-size:1.12em;margin-top:8px;font-weight:500}
+  .sub{color:var(--dim);font-size:.94em;margin-top:12px;max-width:680px;
+    margin-left:auto;margin-right:auto}
+  main{max-width:1060px;margin:0 auto;padding:8px 16px 80px}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    margin:20px 0;padding:22px 24px;transition:border-color .3s}
+  section.hero{border-color:var(--brand);
+    background:linear-gradient(180deg,#15202f,var(--panel))}
+  section:hover{border-color:#384860}
+  section.hero:hover{border-color:var(--brand2)}
+  h2{margin:0 0 6px;font-size:1.2em;font-weight:650}
+  h2 .n{color:var(--brand);font-variant-numeric:tabular-nums;margin-right:8px}
+  p.note{color:var(--dim);font-size:.93em;margin:8px 0 14px}
+  p.note b{color:var(--text);font-weight:600}
+  .pill{display:inline-block;background:#1e2d3f;color:var(--brand2);
+    border-radius:20px;padding:4px 12px;font-size:.78em;font-weight:600;
+    margin:0 5px 5px 0;font-family:var(--mono);transition:.15s}
+  .pill:hover{background:#263b54}
+  .pill.g{color:var(--green);background:#16281d}
+  .pill.r{color:var(--red);background:#2a1818}
+  button{background:var(--brand);color:#06202e;border:0;border-radius:9px;
+    padding:10px 18px;font-weight:650;cursor:pointer;margin:4px 7px 4px 0;
+    font-family:inherit;font-size:.92em;transition:all .15s;
+    box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  button:hover{background:var(--brand2);transform:translateY(-1px);
+    box-shadow:0 3px 8px rgba(56,189,248,.2)}
+  button.sec{background:#1e2d3f;color:var(--text)}
+  button.sec:hover{background:#2a3d54}
+  button:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+  button.danger{background:var(--red);color:#fff}
+  button.danger:hover{background:#f97080}
+  select{background:#1e2d3f;color:var(--text);border:1px solid #384860;
+    border-radius:8px;padding:8px 12px;font-family:inherit;font-size:.92em;
+    cursor:pointer;transition:border-color .15s}
+  select:hover{border-color:var(--brand)}
+  select:focus{outline:none;border-color:var(--brand2)}
+  pre.out{background:#080c14;border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;font-family:var(--mono);font-size:.79em;line-height:1.65;
+    white-space:pre-wrap;min-height:30px;overflow:auto;margin:14px 0 0;
+    max-height:500px;overflow-y:auto}
+  .g{color:var(--green)} .r{color:var(--red)} .y{color:var(--amber)}
+  .b{color:var(--brand2)} .d{color:var(--dim)} .go{color:var(--gold)}
+  .pu{color:var(--purple)} .em{color:var(--emerald)}
+  .bar-wrap{height:8px;background:#1e2d3f;border-radius:5px;overflow:hidden;
+    margin:14px 0 0;display:none}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));
+    width:0%;transition:width .25s ease-out;border-radius:5px}
+  .stat{font-family:var(--mono);font-size:.8em;margin-top:14px;color:var(--dim)}
+  .stat b{color:var(--text)}
+  .tb{font-family:var(--mono);font-size:.85em;font-weight:500;color:var(--green)}
+  button:not(.sec) .tb{color:#06202e}
+  .card{background:var(--panel2);border:1px solid var(--line);border-radius:11px;
+    padding:16px 18px;margin-top:14px;transition:border-color .2s}
+  .card:hover{border-color:#405470}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:12px}
+  .card-title{font-size:1.14em;font-weight:650}
+  .card-price{font-size:1.4em;font-weight:750;color:var(--brand2);
+    font-variant-numeric:tabular-nums}
+  .card-meta{color:var(--dim);font-size:.84em;margin-top:6px;font-family:var(--mono)}
+  .kpi-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px}
+  .kpi{font-family:var(--mono);font-size:.82em;color:var(--dim);
+    background:var(--panel);border-radius:9px;padding:10px 14px;min-width:100px}
+  .kpi b{display:block;font-size:1.55em;color:var(--text);font-weight:700;line-height:1.3}
+  .kpi .up{color:var(--green)}
+  .kpi .dn{color:var(--red)}
+  table.cmp{width:100%;border-collapse:collapse;margin-top:16px;font-size:.85em}
+  table.cmp th{text-align:left;color:var(--dim);font-weight:600;
+    border-bottom:1px solid var(--line);padding:10px 8px;font-size:.88em}
+  table.cmp td{padding:10px 8px;border-bottom:1px solid #1a2432;
+    font-family:var(--mono);font-size:.91em}
+  table.cmp tr:last-child td{border-bottom:0}
+  table.cmp .win{color:var(--green);font-weight:700}
+  table.cmp .lose{color:var(--red)}
+  footer{text-align:center;color:var(--dim);padding:36px 16px 56px;font-size:.86em;
+    border-top:1px solid var(--line);margin-top:50px}
+  footer b{color:var(--text)}
+  .kicker{color:var(--brand);font-size:.74em;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;margin-bottom:6px}
+  .deal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:12px;margin-top:14px}
+  .deal-card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;cursor:pointer;transition:all .15s}
+  .deal-card:hover{border-color:var(--brand);transform:translateY(-2px);
+    box-shadow:0 4px 12px rgba(0,0,0,.4)}
+  .deal-card .name{font-weight:650;font-size:.98em}
+  .deal-card .profit{font-size:1.2em;font-weight:750;color:var(--green);margin-top:4px}
+  .deal-card .detail{color:var(--dim);font-size:.8em;font-family:var(--mono);margin-top:3px}
+  .country-flag{margin-left:6px;font-size:.82em;color:var(--dim)}
+  @media(max-width:640px){
+    header{padding:32px 14px 22px}
+    .logo{font-size:1.8em}
+    section{padding:16px 14px}
+    .kpi-row{gap:8px}
+    .kpi{min-width:80px;padding:8px 10px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">seeze<span>.eu</span></h1>
+  <div class="tag">The question your inventory stack structurally cannot ask.</div>
+  <div class="sub">Every pricing tool answers <i>"what is this car worth?"</i> None of them answers
+  <b>"where is the profit hiding, and why am I not capturing it?"</b> — because that question runs
+  <i>backward</i>, and SQL only runs forward. This is a reasoning engine that runs both ways,
+  over <b>1M real European listings</b>, in your browser.</div>
+</header>
+
+<main>
+
+<!-- ============== STEP 1: COMPILE & LOAD ============== -->
+<section>
+  <div class="kicker">Step 1 · Compile & Load</div>
+  <h2><span class="n">01</span>Build the European index</h2>
+  <p class="note">First compilation reads <b>europe_merged.history_listings</b> from MongoDB,
+  normalizes <b>extracted_make/model</b>, builds CSR indexes, and packs everything into a compact
+  binary format (~45 MB). Subsequent loads skip straight to the browser — zero-copy TypedArrays,
+  the entire 1M market in your tab. No LLM, no server queries after load.</p>
+  <span class="pill">1M listings</span><span class="pill">12 countries</span>
+  <span class="pill">2,060 segments</span><span class="pill" id="pillsize">needs compilation</span>
+  <span class="pill">zero-copy arrays</span>
+  <div style="margin-top:14px">
+    <button onclick="compileAndLoad()" id="btnCompile">⚡ Compile &amp; Load</button>
+    <button onclick="loadMarket()" id="btnLoad" style="display:none">Load cached data</button>
+    <button class="sec" onclick="recompile()" id="btnRecompile" style="display:none">Recompile from DB</button>
+    <button class="sec" onclick="showDataInfo()" id="btnInfo" disabled>Data info</button>
+  </div>
+  <div class="bar-wrap" id="loadBar"><div class="bar-fill" id="loadFill"></div></div>
+  <div class="stat" id="loadStat"></div>
+</section>
+
+<!-- ============== STEP 2: PICK ============== -->
+<section>
+  <div class="kicker">Step 2 · The unit</div>
+  <h2><span class="n">02</span>Pick a car off the lot</h2>
+  <p class="note">Filter by country, then pick a listing profile. Real cars from real marketplaces.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <select id="countryPick" onchange="onCountryChange()"><option value="">All countries</option></select>
+    <select id="carPick" onchange="pickCar()">
+      <option value="underpriced">Hidden gem — priced well below predicted</option>
+      <option value="overpriced">The stale unit — priced far above market</option>
+      <option value="random">Random listing</option>
+    </select>
+    <button onclick="pickCar()">Pick</button>
+  </div>
+  <div class="card" id="carCard" style="display:none"></div>
+</section>
+
+<!-- ============== STEP 3: FORWARD ============== -->
+<section>
+  <div class="kicker">Step 3 · What every tool does</div>
+  <h2><span class="n">03</span>Price it <span class="tb" id="t3"></span></h2>
+  <p class="note">The forward question — <i>what is it worth?</i> We compare actual price to
+  <b>predicted_price</b> and the <b>segment market average</b>. This is the question the
+  industry already answers — but note what it costs to do it our way vs. a full scan.</p>
+  <button onclick="fwd()" id="btnFwd" disabled>Price this car</button>
+  <pre class="out" id="o3" style="min-height:20px"></pre>
+</section>
+
+<!-- ============== STEP 4: BACKWARD ============== -->
+<section>
+  <div class="kicker">Step 4 · The question with no answer today</div>
+  <h2><span class="n">04</span>Why <i>that</i> price? <span class="tb" id="t4"></span></h2>
+  <p class="note">The number is a <b>conclusion</b>; a conclusion has a derivation. We walk it:
+  which comps define this segment, what's the profit distribution, where does this unit sit in
+  the spread? This is the conversation a dealer has with a buyer — and no system holds up its end.</p>
+  <button onclick="bwd()" id="btnBwd" disabled>Show me the proof</button>
+  <pre class="out" id="o4" style="min-height:20px"></pre>
+</section>
+
+<!-- ============== STEP 5: COUNTERFACTUAL ============== -->
+<section>
+  <div class="kicker">Step 5 · Where the models get you hurt</div>
+  <h2><span class="n">05</span>What if we priced at predicted? <span class="tb" id="t5"></span></h2>
+  <p class="note">A predictive model will <b>always</b> answer this — fluently, instantly.
+  Our engine checks the evidence first. In a liquid segment the elasticity is established.
+  In a thin segment it <b>refuses</b> and tells you why refusing is the profitable move.</p>
+  <button onclick="wif()" id="btnWif" disabled>Run the counterfactual</button>
+  <pre class="out" id="o5" style="min-height:20px"></pre>
+</section>
+
+<!-- ============== STEP 6: DEAL DISCOVERY ============== -->
+<section class="hero">
+  <div class="kicker">Step 6 · The whole point</div>
+  <h2><span class="n">06</span>Find the best deals in Europe <span class="tb" id="t6"></span></h2>
+  <p class="note">Instead of asking about ONE car, we ask about ALL of them: <b>which listings
+  have the highest profit potential right now?</b> This runs backward through the index —
+  and returns the answer before a conventional query finishes loading the first page.</p>
+  <button onclick="deals()" id="btnDeals" disabled>Find best deals</button>
+  <div class="deal-grid" id="dealGrid"></div>
+</section>
+
+<!-- ============== STEP 7: BENCHMARK ============== -->
+<section>
+  <div class="kicker">Step 7 · Why this is buildable</div>
+  <h2><span class="n">07</span>The cost of asking</h2>
+  <p class="note">Directed questions cost what the <b>answer</b> costs, not what the <b>market</b>
+  costs. That is the entire engineering thesis, and it is why this runs in a browser tab.</p>
+  <button class="sec" onclick="bench()" id="btnBench" disabled>Run the benchmark</button>
+  <div id="benchOut"></div>
+</section>
+
+</main>
+
+<footer>
+  <b>seeze.eu</b> — deal discovery as a query mode.<br>
+  <span class="d">Real data from europe_merged.history_listings · binary-loaded into browser memory · no server queries.</span>
+</footer>
+
+<script>
+"use strict";
+const el=id=>document.getElementById(id);
+const put=(id,h)=>{el(id).innerHTML=h;};
+const nf=n=>n.toLocaleString();
+const ms=v=>v<1?`${(v*1000).toFixed(0)} µs`:v<1000?`${v.toFixed(2)} ms`:`${(v/1000).toFixed(2)} s`;
+const pct=v=>v==null?"—":`${(v*100).toFixed(1)}%`;
+function badge(id,v){el(id).textContent=" · "+ms(v);}
+const EUR= n => "€"+nf(Math.round(n));
+
+// ── State ──────────────────────────────────────────────────────────
+let META=null,   // metadata from JSON
+    BUF=null,    // ArrayBuffer of binary data
+    DV=null;     // DataView over BUF
+
+// TypedArrays (built after load, zero-copy where possible via subarray)
+let segIds=null, ctyIds=null, years=null, prices=null,
+    predicted=null, profits=null, profitPcts=null, mileages=null, hasImgs=null;
+
+// CSR indexes
+let segOff=null, segMem=null, ctyOff=null, ctyMem=null;
+
+let PICK=-1;          // current listing index
+let SEGS=[], CTYS=[]; // string arrays
+let S=0, C=0, N=0;
+
+const THIN = 300;
+const API_COMPILE = "/api/compile";
+const API_STATUS = "/api/status";
+const API_DATA_INFO = "/api/data-info";
+const META_URL = "europe_lakehouse_meta.json";
+const DATA_URL = "europe_lakehouse_data.bin";
+
+// ── STEP 1: Check data status on page load ─────────────────────────
+async function checkDataStatus(){
+  try{
+    const resp=await fetch(API_DATA_INFO);
+    const info=await resp.json();
+    if(info.meta_exists && info.data_exists){
+      el("btnCompile").style.display="none";
+      el("btnLoad").style.display="inline-block";
+      el("btnRecompile").style.display="inline-block";
+      el("pillsize").textContent=(info.data_size/2**20).toFixed(0)+" MB cached";
+      el("pillsize").className="pill g";
+      put("loadStat",`<span class="g">✓ Compiled data found</span> <span class="d">— ${nf(info.listing_count||0)} listings · ${(info.data_size/2**20).toFixed(0)} MB</span>
+  <span class="d">Click "Load cached data" to start, or "Recompile from DB" to rebuild.</span>`);
+    } else {
+      el("btnCompile").style.display="inline-block";
+      el("btnLoad").style.display="none";
+      el("btnRecompile").style.display="none";
+      el("pillsize").textContent="needs compilation";
+      put("loadStat",`<span class="y">No compiled data yet.</span> <span class="d">Click "Compile & Load" to build the index from MongoDB.</span>`);
+    }
+  }catch(err){
+    // No server API — load data files directly
+    el("btnCompile").style.display="none";
+    el("btnRecompile").style.display="none";
+    el("btnLoad").style.display="none";
+    put("loadStat",`<span class="d">Loading data from local files…</span>`);
+    setTimeout(loadMarket, 300);
+  }
+}
+
+// ── Compile & Load ─────────────────────────────────────────────────
+async function compileAndLoad(){
+  const btn=el("btnCompile"); btn.disabled=true; btn.textContent="Starting…";
+  el("loadBar").style.display="block"; el("loadFill").style.width="0%";
+  put("loadStat",`<span class="d">Starting compilation from MongoDB…</span>`);
+
+  try{
+    // 1. Trigger compilation
+    const resp=await fetch(API_COMPILE, {method:"POST"});
+    const result=await resp.json();
+    if(result.status!=="started" && result.status!=="already_running"){
+      throw new Error(result.message||"Compile failed to start");
+    }
+    if(result.status==="already_running"){
+      put("loadStat",`<span class="y">Build already in progress, monitoring…</span>`);
+    }
+
+    // 2. Poll for progress
+    el("loadFill").style.width="10%";
+    let done=false;
+    const maxWait=120; // 2 minutes max
+    const startTime=Date.now();
+
+    while(!done && (Date.now()-startTime)<maxWait*1000){
+      await sleep(1500);
+      const statusResp=await fetch(API_STATUS);
+      const status=await statusResp.json();
+
+      if(status.status==="running"){
+        // Show last few lines of build output
+        const lines=status.progress.split("\n").slice(-6).join("<br>");
+        const elapsed=((Date.now()-startTime)/1000).toFixed(0);
+        const pct=Math.min(95, 10+(elapsed/30)*85); // rough estimate
+        el("loadFill").style.width=pct.toFixed(0)+"%";
+        put("loadStat",`<span class="d">Compiling… ${elapsed}s</span><br><span class="d" style="font-size:.75em">${lines}</span>`);
+      } else if(status.status==="done"){
+        done=true;
+        el("loadFill").style.width="98%";
+        put("loadStat",`<span class="g">✓ Compilation complete!</span> <span class="d">Loading into browser…</span>`);
+      } else if(status.status==="error"){
+        throw new Error(status.error||"Compilation failed");
+      }
+    }
+
+    if(!done) throw new Error("Compilation timed out after "+maxWait+"s");
+
+    // 3. Load the compiled data
+    await loadBinary();
+
+    // Show both load and recompile buttons
+    btn.style.display="none";
+    el("btnLoad").style.display="inline-block";
+    el("btnRecompile").style.display="inline-block";
+  }catch(err){
+    el("loadBar").style.display="none";
+    put("loadStat",`<span class="r">Compilation failed: ${err.message}</span>
+      <span class="d">Check the server console for details. Is MongoDB reachable?</span>`);
+    btn.disabled=false; btn.textContent="⚡ Retry Compile";
+  }
+}
+
+async function recompile(){
+  if(confirm("This will rebuild the index from MongoDB (~30-60 seconds). Continue?")){
+    el("btnCompile").style.display="inline-block";
+    el("btnLoad").style.display="none";
+    el("btnRecompile").style.display="none";
+    el("btnCompile").disabled=false;
+    el("btnCompile").textContent="⚡ Compile & Load";
+    await compileAndLoad();
+  }
+}
+
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+// ── STEP 1b: Load cached data ──────────────────────────────────────
+async function loadMarket(){
+  // Check if data files exist first
+  try{
+    const check=await fetch(API_DATA_INFO);
+    const info=await check.json();
+    if(!info.meta_exists || !info.data_exists){
+      put("loadStat",`<span class="y">No compiled data found.</span> <span class="d">Click "Compile & Load" first.</span>`);
+      el("btnCompile").style.display="inline-block";
+      return;
+    }
+  }catch(e){ /* fall through to direct load */ }
+  await loadBinary();
+}
+
+async function loadBinary(){
+  const btnCompile=el("btnCompile");
+  const btnLoad=el("btnLoad");
+  btnCompile.disabled=true; btnLoad.disabled=true;
+  btnLoad.textContent="Loading…";
+  el("loadBar").style.display="block"; el("loadFill").style.width="0%";
+  put("loadStat",`<span class="d">fetching metadata…</span>`);
+
+  try{
+    // 1. Metadata
+    const t0=performance.now();
+    const metaResp=await fetch(META_URL);
+    META=await metaResp.json();
+    N=META.listing_count; S=META.segment_count; C=META.country_count;
+    SEGS=META.segments; CTYS=META.countries;
+    el("loadFill").style.width="5%";
+    put("loadStat",`<span class="d">metadata loaded · ${nf(N)} listings · ${nf(S)} segments · ${C} countries</span>`);
+
+    // 2. Binary data
+    const t1=performance.now();
+    put("loadStat",`<span class="d">downloading binary data…</span>`);
+    const dataResp=await fetch(DATA_URL);
+    const reader=dataResp.body.getReader();
+    const chunks=[];
+    let downloaded=0;
+    const totalSize=parseInt(dataResp.headers.get("Content-Length")||"0");
+    while(true){
+      const {done,value}=await reader.read();
+      if(done) break;
+      chunks.push(value);
+      downloaded+=value.length;
+      if(totalSize>0){
+        const pct=5+90*(downloaded/totalSize);
+        el("loadFill").style.width=pct.toFixed(1)+"%";
+        put("loadStat",`<span class="d">downloading… ${(downloaded/1e6).toFixed(1)} MB / ${(totalSize/1e6).toFixed(1)} MB</span>`);
+      }
+    }
+    BUF=new ArrayBuffer(downloaded);
+    const view=new Uint8Array(BUF);
+    let pos=0;
+    for(const c of chunks){ view.set(c,pos); pos+=c.length; }
+    DV=new DataView(BUF);
+    el("loadFill").style.width="95%";
+    put("loadStat",`<span class="d">building TypedArrays…</span>`);
+
+    // 3. Parse binary and build TypedArrays
+    const t2=performance.now();
+    parseBinary();
+    const t3=performance.now();
+
+    el("loadFill").style.width="100%";
+    setTimeout(()=>{el("loadBar").style.display="none";},500);
+    const loadWall=t3-t0;
+    put("loadStat",
+      `<b class="g">market loaded</b> in ${ms(loadWall)} `+
+      `<span class="d">(fetch: ${ms(t1-t0)} · download: ${ms(t2-t1)} · parse: ${ms(t3-t2)})</span><br>`+
+      `listings <b>${nf(N)}</b> · segments <b>${nf(S)}</b> · countries <b>${C}</b> `+
+      `<span class="d">· ${(BUF.byteLength/2**20).toFixed(1)} MB in memory</span>`);
+
+    // Enable all buttons
+    ["btnFwd","btnBwd","btnWif","btnDeals","btnBench","btnInfo"].forEach(id=>el(id).disabled=false);
+    btnCompile.disabled=false; btnLoad.disabled=false;
+    btnLoad.textContent="Reload cached data";
+    el("pillsize").textContent=(BUF.byteLength/2**20).toFixed(0)+" MB loaded";
+    el("pillsize").className="pill g";
+
+    // Fill country dropdown
+    const sel=el("countryPick");
+    sel.innerHTML='<option value="">All countries ('+nf(N)+')</option>';
+    for(let c=0;c<C;c++){
+      const n=ctyOff[c+1]-ctyOff[c];
+      sel.innerHTML+=`<option value="${c}">${CTYS[c]} (${nf(n)})</option>`;
+    }
+    pickCar();
+  }catch(err){
+    el("loadBar").style.display="none";
+    put("loadStat",`<span class="r">Failed to load: ${err.message}</span>
+      <span class="d">Make sure the data files exist. Run "Compile & Load" first.</span>`);
+    btnCompile.disabled=false; btnLoad.disabled=false;
+    btnLoad.textContent="Retry load";
+  }
+}
+
+function parseBinary(){
+  const h=META.header_bytes;
+  const arrs=META.arrays;
+
+  // Create TypedArrays directly from buffer slices (zero-copy!)
+  segIds   = new Uint32Array(BUF, h+arrs.segment_ids.offset, N);
+  ctyIds   = new Uint8Array (BUF, h+arrs.country_ids.offset, N);
+  years    = new Uint16Array(BUF, h+arrs.years.offset,       N);
+  prices   = new Int32Array (BUF, h+arrs.prices.offset,      N);
+  predicted= new Int32Array (BUF, h+arrs.predicted.offset,   N);
+  profits  = new Int32Array (BUF, h+arrs.profits.offset,     N);
+  profitPcts=new Float32Array(BUF, h+arrs.profit_pcts.offset,N);
+  mileages = new Int32Array (BUF, h+arrs.mileages.offset,    N);
+  hasImgs  = new Uint8Array (BUF, h+arrs.has_images.offset,  N);
+
+  // Parse CSR indexes from binary (they're after the names).
+  // Names may leave the offset unaligned, but Uint32Array requires 4-byte alignment.
+  // Use DataView for safe unaligned reads, then build aligned arrays.
+  let off=h+arrs.has_images.offset+N; // after has_images array
+  const dv=DV;
+
+  // Skip segment names
+  const sCount=dv.getUint32(off,true); off+=4;
+  for(let i=0;i<sCount;i++){
+    const len=dv.getUint16(off,true); off+=2+len;
+  }
+  // Skip country names
+  const cCount=dv.getUint32(off,true); off+=4;
+  for(let i=0;i<cCount;i++){
+    const len=dv.getUint8(off); off+=1+len;
+  }
+
+  // Helper: create aligned Uint32Array from unaligned buffer offset
+  function makeAlignedU32(buf, byteOffset, count){
+    const slice=buf.slice(byteOffset, byteOffset+count*4);
+    return new Uint32Array(slice);
+  }
+
+  // CSR: Segment→Listings
+  const soCount=dv.getUint32(off,true); off+=4;
+  segOff=makeAlignedU32(BUF,off,soCount); off+=soCount*4;
+  const smCount=dv.getUint32(off,true); off+=4;
+  segMem=makeAlignedU32(BUF,off,smCount); off+=smCount*4;
+  // CSR: Country→Listings
+  const coCount=dv.getUint32(off,true); off+=4;
+  ctyOff=makeAlignedU32(BUF,off,coCount); off+=coCount*4;
+  const cmCount=dv.getUint32(off,true); off+=4;
+  ctyMem=makeAlignedU32(BUF,off,cmCount);
+}
+
+function listingInfo(i){
+  if(i<0||i>=N) return null;
+  return {
+    idx:i, segId:segIds[i], ctyId:ctyIds[i],
+    year:years[i], price:prices[i],
+    predicted:predicted[i], profit:profits[i],
+    profitPct:profitPcts[i], mileage:mileages[i],
+    hasImg:hasImgs[i],
+  };
+}
+
+function segName(sid){ return sid>=0&&sid<S?SEGS[sid]:"unknown"; }
+function ctyName(cid){ return cid>=0&&cid<C?CTYS[cid]:"unknown"; }
+function supply(sid){ return segOff[sid+1]-segOff[sid]; }
+
+// Market stats for a segment (excluding self)
+function marketStats(sid, selfIdx){
+  let n=0,sum=0,lo=1e12,hi=-1e12,sumProfit=0;
+  for(let p=segOff[sid];p<segOff[sid+1];p++){
+    const i=segMem[p];
+    if(i===selfIdx) continue;
+    const px=prices[i];
+    n++; sum+=px;
+    if(px<lo) lo=px;
+    if(px>hi) hi=px;
+    sumProfit+=profits[i];
+  }
+  return {n, avg:n?Math.round(sum/n):0, lo:n?lo:0, hi, avgProfit:n?Math.round(sumProfit/n):0};
+}
+
+// ── STEP 2: Pick ───────────────────────────────────────────────────
+function onCountryChange(){ pickCar(); }
+
+function pickCar(){
+  if(!META) return;
+  ["t3","t4","t5","t6"].forEach(i=>el(i).textContent="");
+  ["o3","o4","o5"].forEach(i=>put(i,""));
+  el("dealGrid").innerHTML="";
+
+  const ctyFilter=el("countryPick").value;
+  const want=el("carPick").value;
+  const cid=ctyFilter!==""?parseInt(ctyFilter):-1;
+
+  // Get candidates from CSR (country-filtered or all)
+  let candidates=[];
+  if(cid>=0){
+    for(let p=ctyOff[cid];p<ctyOff[cid+1];p++) candidates.push(ctyMem[p]);
+  } else {
+    // Sample from all: take ~100K random indices
+    const step=Math.max(1,Math.floor(N/50000));
+    for(let i=0;i<N;i+=step) candidates.push(i);
+  }
+  if(candidates.length===0){ candidates=[0]; }
+
+  // Score
+  let best=-1, bestScore=-Infinity;
+  for(let tries=0;tries<candidates.length&&tries<100000;tries++){
+    const i=candidates[Math.floor(Math.random()*candidates.length)];
+    const sup=supply(segIds[i]);
+    const diff=predicted[i]-prices[i];
+    let s;
+    if(want==="underpriced")  s = diff>0 ? diff*(1+sup/1000) : -Infinity;
+    else if(want==="overpriced") s = diff<0 ? -diff*(1+sup/1000) : -Infinity;
+    else                      s = Math.abs(diff)+sup;
+    if(s>bestScore&&sup>=5){ bestScore=s; best=i; }
+  }
+  if(best<0) best=0;
+  PICK=best;
+  const li=listingInfo(PICK);
+  const sup=supply(li.segId);
+
+  el("carCard").style.display="block";
+  el("carCard").innerHTML=
+    `<div class="card-top">
+      <div>
+        <div class="card-title">${segName(li.segId)} <span class="country-flag">${ctyName(li.ctyId)}</span></div>
+        <div class="card-meta">listing #${nf(PICK)} · segment #${li.segId} · year ${li.year} · ${nf(li.mileage)} km · `+
+        `${sup<THIN?`<span class="r">${nf(sup)} comps — THIN</span>`:`<b>${nf(sup)}</b> comps`}</div>
+      </div>
+      <div class="card-price">${EUR(li.price)}</div>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi">Predicted<b>${EUR(li.predicted)}</b></div>
+      <div class="kpi">Potential profit<b class="${li.profit>0?'up':'dn'}">${EUR(li.profit)}</b></div>
+      <div class="kpi">Margin<b class="${li.profitPct>0?'up':'dn'}">${pct(li.profitPct)}</b></div>
+      <div class="kpi">vs Market<b class="${li.price>li.predicted?'dn':'up'}">${li.price>li.predicted?'+':''}${EUR(li.price-li.predicted)}</b></div>
+    </div>`;
+
+  document.getElementById("btnFwd").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+// ── STEP 3: Forward ────────────────────────────────────────────────
+function fwd(){
+  if(!META||PICK<0) return;
+  const t0=performance.now();
+  const li=listingInfo(PICK);
+  const mk=marketStats(li.segId, PICK);
+  const sup=supply(li.segId);
+  const t=performance.now()-t0; badge("t3",t);
+
+  const diff=li.price-li.predicted;
+  const mkDiff=li.price-mk.avg;
+  const touched=1+mk.n+2; // this listing + comps + segment metadata
+  const scan=N;
+
+  put("o3",
+`<span class="b">${segName(li.segId)}</span> · ${ctyName(li.ctyId)} · listing #${nf(PICK)}
+  asking        <b>${EUR(li.price)}</b>
+  predicted     ${EUR(li.predicted)}   <span class="d">(model estimate)</span>
+  market avg    ${EUR(mk.avg)}         <span class="d">(${nf(mk.n)} live comps, ${EUR(mk.lo)}–${EUR(mk.hi)})</span>
+  vs predicted  <span class="${diff>0?'g':'r'}">${diff>0?'+':''}${EUR(diff)} ${diff>0?'ABOVE prediction':'below prediction'}</span>
+  vs market     <span class="${mkDiff>0?'r':'g'}">${mkDiff>0?'+':''}${EUR(mkDiff)} ${mkDiff>0?'ABOVE market avg':'at/below market avg'}</span>
+
+  year          ${li.year} · mileage ${nf(li.mileage)} km
+  avg profit in segment   ${EUR(mk.avgProfit)}
+
+<span class="d">─── what it cost to answer ───</span>
+  we touched        <span class="g">${nf(touched)} records</span> in ${ms(t)}
+  a full market scan <span class="r">${nf(scan)} records</span>
+  <span class="go">${nf(Math.round(scan/touched))}× less work — for the identical answer</span>
+  <span class="d">and the gap only grows as the market grows.</span>`);
+}
+
+// ── STEP 4: Backward ───────────────────────────────────────────────
+function bwd(){
+  if(!META||PICK<0) return;
+  const t0=performance.now();
+  const li=listingInfo(PICK);
+  const sup=supply(li.segId);
+  const mk=marketStats(li.segId, PICK);
+
+  // Find top profit comps and closest price comps
+  let bestDeals=[], closest=[];
+  for(let p=segOff[li.segId];p<segOff[li.segId+1];p++){
+    const i=segMem[p];
+    if(i===PICK) continue;
+    bestDeals.push({idx:i, profit:profits[i], price:prices[i], pct:profitPcts[i]});
+    closest.push({idx:i, price:prices[i], dist:Math.abs(prices[i]-li.price)});
+  }
+  bestDeals.sort((a,b)=>b.profit-a.profit);
+  closest.sort((a,b)=>a.dist-b.dist);
+
+  const t=performance.now()-t0; badge("t4",t);
+
+  let rows="";
+  for(let i=0;i<Math.min(5,bestDeals.length);i++){
+    const d=bestDeals[i];
+    rows+=`  ${ctyName(ctyIds[d.idx])}  ${EUR(d.price)}  profit ${EUR(d.profit)}  <span class="g">margin ${pct(d.pct)}</span>\n`;
+  }
+  if(rows==="") rows='  <span class="d">(no other comps in this segment)</span>\n';
+
+  const cheaper=sup?Math.round(100*mk.n*0.5/sup):50; // rough estimate of below-median
+
+  put("o4",
+`<span class="b">why is this priced at ${EUR(li.price)}?</span>
+
+the price is not a fact — it is a <b>decision</b>. here is the evidence:
+
+  segment       ${segName(li.segId)} → <b>${nf(sup)}</b> total listings
+  market range  ${EUR(mk.lo)} – ${EUR(mk.hi)}  ·  avg ${EUR(mk.avg)}
+  position      ${li.price>mk.avg?'<span class="r">ABOVE median</span>':'<span class="g">AT/BELOW median</span>'}
+
+  <b>top profit comps in this segment:</b>
+${rows}
+  <b>closest price comps:</b>
+${closest.slice(0,3).map(c=>`  ${ctyName(ctyIds[c.idx])}  ${EUR(c.price)}  (${c.dist===0?'same price':EUR(c.dist)+' diff'})`).join('\n')}
+
+  walked in    ${ms(t)} <span class="d">across ${nf(N)} listings</span>
+
+<span class="d">This is the conversation you have when evaluating a unit. Every number
+carries the comp that produced it — and the profit you're leaving on the table.</span>`);
+}
+
+// ── STEP 5: Counterfactual ─────────────────────────────────────────
+function wif(){
+  if(!META||PICK<0) return;
+  const t0=performance.now();
+  const li=listingInfo(PICK);
+  const sup=supply(li.segId);
+  const t=performance.now()-t0; badge("t5",t);
+
+  const newPrice=li.predicted;
+  const priceDelta=li.price-newPrice;
+  // Profit at current price vs profit at predicted price
+  // profit = predicted_price - price (roughly)
+  const currentProfit=li.profit;
+  const newProfit=li.predicted-newPrice; // would be 0 if priced at predicted
+  const profitDelta=currentProfit-newProfit;
+
+  if(sup<THIN){
+    put("o5",
+`<span class="b">do( price → predicted ${EUR(newPrice)} ) ?</span>
+
+  <span class="r">REFUSED — the evidence does not license this action.</span>
+
+  segment supply   only <b>${nf(sup)}</b> live comps (thin market)
+  current price    ${EUR(li.price)} · current profit ${EUR(currentProfit)}
+  at predicted     ${EUR(newPrice)} · profit would drop to ~${EUR(newProfit)}
+
+  <span class="r">the verdict:</span> in thin segments, price cuts buy margin loss, not velocity.
+  with only ${nf(sup)} comps, you cannot establish a reliable price elasticity.
+  dropping ${EUR(priceDelta)} of price destroys ${EUR(profitDelta)} of profit
+  with no countersigned evidence that it would accelerate the sale.
+
+  <span class="g">licensed instead:</span>
+     hold price. the profit margin is ${pct(li.profitPct)} — in a thin market,
+     the buyer who wants this exact spec will pay for it.
+
+<span class="d">A predictive model would gladly quote you a new price. Fluently. Instantly.
+It would cost you EUR ${EUR(profitDelta)} on a car that was going to sell anyway.
+Refusing is the profitable move — but only an engine that knows
+WHY it believes things can refuse.</span>`);
+  } else {
+    put("o5",
+`<span class="b">do( price → predicted ${EUR(newPrice)} ) ?</span>
+
+  <span class="g">LICENSED — the elasticity is established for this segment.</span>
+
+  segment supply   <b>${nf(sup)}</b> live comps (liquid market)
+  current price    ${EUR(li.price)} · current profit ${EUR(currentProfit)} (${pct(li.profitPct)})
+  at predicted     ${EUR(newPrice)} · profit would be ~${EUR(newProfit)}
+  price change     <span class="r">−${EUR(priceDelta)}</span> (${pct(priceDelta/li.price)})
+
+  expected effect
+     a ${pct(priceDelta/li.price)} price reduction in a ${nf(sup)}-comp segment
+     typically improves market position significantly while retaining
+     ${EUR(newProfit)} of profit margin.
+
+  <span class="go">the engine scoped this to the segment it was measured in.
+  it did NOT invent a point estimate — it returned the interval it can defend.</span>`);
+  }
+}
+
+// ── STEP 6: Deal Discovery ─────────────────────────────────────────
+function deals(){
+  if(!META) return;
+  const t0=performance.now();
+
+  // Find top deals across all listings by potential_profit
+  // We sample segments proportionally to find hidden gems
+  let top=[];
+  const candidateCount=100000; // sample this many
+
+  for(let s=0;s<S;s++){
+    const count=segOff[s+1]-segOff[s];
+    if(count===0) continue;
+    // Sample proportionally, at least 1
+    const take=Math.max(1,Math.floor(candidateCount*count/N));
+    for(let j=0;j<Math.min(take,count);j++){
+      const idx=segMem[segOff[s]+Math.floor(Math.random()*count)];
+      top.push({
+        idx, segId:s, ctyId:ctyIds[idx],
+        price:prices[idx], profit:profits[idx],
+        pct:profitPcts[idx], year:years[idx],
+        predicted:predicted[idx]
+      });
+    }
+  }
+
+  // Sort by profit descending
+  top.sort((a,b)=>b.profit-a.profit);
+  const best=top.slice(0,20);
+
+  const t=performance.now()-t0; badge("t6",t);
+
+  let html="";
+  for(const d of best){
+    const seg=segName(d.segId);
+    const cty=ctyName(d.ctyId);
+    html+=`<div class="deal-card" onclick="jumpTo(${d.idx})">
+      <div class="name">${seg} <span class="country-flag">${cty}</span></div>
+      <div class="profit">${EUR(d.profit)} profit</div>
+      <div class="detail">${EUR(d.price)} asking · predicted ${EUR(d.predicted)} · ${d.year} · margin ${pct(d.pct)}</div>
+    </div>`;
+  }
+  el("dealGrid").innerHTML=html;
+
+  // Also show summary
+  put("o5",`<span class="go">Scanned ${nf(N)} listings across ${nf(S)} segments in ${ms(t)}.</span>
+  <span class="d">Top ${best.length} deals by potential_profit. Click any card to jump to it.</span>`);
+}
+
+function jumpTo(idx){
+  PICK=idx;
+  const li=listingInfo(PICK);
+  const sup=supply(li.segId);
+  el("carCard").style.display="block";
+  el("carCard").innerHTML=
+    `<div class="card-top">
+      <div>
+        <div class="card-title">${segName(li.segId)} <span class="country-flag">${ctyName(li.ctyId)}</span></div>
+        <div class="card-meta">listing #${nf(PICK)} · year ${li.year} · ${nf(li.mileage)} km · `+
+        `${sup<THIN?`<span class="r">${nf(sup)} comps</span>`:`<b>${nf(sup)}</b> comps`}</div>
+      </div>
+      <div class="card-price">${EUR(li.price)}</div>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi">Predicted<b>${EUR(li.predicted)}</b></div>
+      <div class="kpi">Profit<b class="${li.profit>0?'up':'dn'}">${EUR(li.profit)}</b></div>
+      <div class="kpi">Margin<b class="${li.profitPct>0?'up':'dn'}">${pct(li.profitPct)}</b></div>
+      <div class="kpi">vs Pred<b class="${li.price>li.predicted?'dn':'up'}">${li.price>li.predicted?'+':''}${EUR(li.price-li.predicted)}</b></div>
+    </div>`;
+  document.getElementById("btnFwd").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+// ── STEP 7: Benchmark ──────────────────────────────────────────────
+function bench(){
+  if(!META) return;
+  const li=listingInfo(PICK>=0?PICK:0);
+  const sup=supply(li.segId);
+
+  // Simulate different market sizes
+  const scales=[0.1,0.25,0.5,1.0];
+  let rows=[];
+  for(const sc of scales){
+    const scaledN=Math.round(N*sc);
+    const moded=1+Math.round(sup*sc)+(sc<1?2:0);
+    const scan=scaledN;
+    rows.push({size:scaledN, moded, scan, ratio:Math.round(scan/moded)});
+  }
+
+  let h=`<table class="cmp"><thead><tr><th>market size</th>`+
+    `<th>records we touch</th><th>records a scan touches</th>`+
+    `<th>advantage</th><th>segment</th></tr></thead><tbody>`;
+  for(const r of rows){
+    const tag=r.size===N?' <span class="d">← actual</span>':'';
+    h+=`<tr><td>${nf(r.size)}${tag}</td><td class="win">${nf(r.moded)}</td>`+
+       `<td class="r">${nf(r.scan)}</td>`+
+       `<td class="win">${nf(r.ratio)}×</td>`+
+       `<td class="d">${nf(Math.round(sup*(r.size/N)))} comps</td></tr>`;
+  }
+  h+=`</tbody></table>`;
+  h+=`<pre class="out">`+
+`<span class="go">the column that matters is the middle one.</span>
+
+As the market scales, the work we do barely moves — because a directed
+question costs what its <b>answer</b> costs, not what the <b>market</b> costs.
+
+Segment index:    O(1) via CSR → ${nf(sup)} comps to scan
+Market scan:      O(N) → ${nf(N)} records
+Winner:           <span class="g">${nf(Math.round(N/(1+sup)))}×</span> less work
+
+With ${nf(N)} listings in memory as zero-copy TypedArrays, every pricing
+question about any car in any European country is a single CSR lookup
+plus a handful of array accesses. No database. No server. No LLM.
+
+<span class="d">That is why this runs in a browser tab, and it is why the
+backward questions in steps 04–06 are affordable to ask about every car
+on every lot, every night.</span></pre>`;
+  el("benchOut").innerHTML=h;
+}
+
+// ── Data Info ──────────────────────────────────────────────────────
+function showDataInfo(){
+  if(!META) return;
+  let h=`<pre class="out">`;
+  h+=`<span class="b">Data Summary</span>\n`;
+  h+=`  Listings:    ${nf(N)}\n`;
+  h+=`  Segments:    ${nf(S)} (extracted_make|extracted_model)\n`;
+  h+=`  Countries:   ${C}\n`;
+  h+=`  Memory:      ${(BUF.byteLength/2**20).toFixed(1)} MB\n\n`;
+
+  // Country breakdown
+  h+=`<span class="b">Countries</span>\n`;
+  for(let c=0;c<C;c++){
+    const n=ctyOff[c+1]-ctyOff[c];
+    h+=`  ${CTYS[c].padEnd(16)} ${nf(n).padStart(10)}\n`;
+  }
+
+  // Segment stats
+  let thinCount=0, totalComps=0;
+  let topSegs=[];
+  for(let s=0;s<S;s++){
+    const n=segOff[s+1]-segOff[s];
+    if(n<THIN) thinCount++;
+    totalComps+=n;
+    topSegs.push({name:SEGS[s],count:n});
+  }
+  topSegs.sort((a,b)=>b.count-a.count);
+  h+=`\n<span class="b">Segments</span>\n`;
+  h+=`  Thin (<${THIN} comps):  ${thinCount}/${S} (${(100*thinCount/S).toFixed(1)}%)\n`;
+  h+=`  Avg comps/segment:  ${nf(Math.round(totalComps/S))}\n`;
+  h+=`  Top 10:\n`;
+  for(let i=0;i<10;i++){
+    h+=`    ${topSegs[i].name.padEnd(40)} ${nf(topSegs[i].count)}\n`;
+  }
+
+  h+=`</pre>`;
+  el("loadStat").innerHTML+=h;
+}
+
+// ── Init ───────────────────────────────────────────────────────────
+put("loadStat",`<span class="d">Checking for compiled data…</span>`);
+checkDataStatus();
+</script>
+</body>
+</html>

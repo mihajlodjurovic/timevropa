@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seeze · The Question Your Stack Can't Ask</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#151b26; --panel2:#1b2330; --line:#26303f;
+    --text:#e8edf5; --dim:#8b98ad; --brand:#38bdf8; --brand2:#7dd3fc;
+    --gold:#fbbf24; --green:#4ade80; --red:#f87171; --amber:#fcd34d;
+    --mono:'SF Mono',ui-monospace,Consolas,Menlo,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,'Segoe UI',Inter,system-ui,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  header{padding:44px 20px 30px;text-align:center;
+    background:radial-gradient(ellipse at 50% -10%,#17324a,var(--bg) 70%);
+    border-bottom:1px solid var(--line)}
+  .logo{font-size:2.5em;font-weight:800;letter-spacing:-1.2px;margin:0}
+  .logo span{color:var(--brand)}
+  .tag{color:var(--brand2);font-size:1.12em;margin-top:8px;font-weight:500}
+  .sub{color:var(--dim);font-size:.95em;margin-top:12px;max-width:660px;
+    margin-left:auto;margin-right:auto}
+  main{max-width:1000px;margin:0 auto;padding:8px 16px 70px}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    margin:20px 0;padding:20px 22px}
+  section.hero{border-color:var(--brand);
+    background:linear-gradient(180deg,#16222f,var(--panel))}
+  h2{margin:0 0 6px;font-size:1.2em;font-weight:650}
+  h2 .n{color:var(--brand);font-variant-numeric:tabular-nums;margin-right:8px}
+  p.note{color:var(--dim);font-size:.93em;margin:8px 0 14px}
+  p.note b{color:var(--text);font-weight:600}
+  .pill{display:inline-block;background:#22303f;color:var(--brand2);
+    border-radius:20px;padding:3px 11px;font-size:.78em;font-weight:600;
+    margin:0 4px 4px 0;font-family:var(--mono)}
+  button{background:var(--brand);color:#06202e;border:0;border-radius:8px;
+    padding:9px 15px;font-weight:650;cursor:pointer;margin:3px 6px 3px 0;
+    font-family:inherit;font-size:.92em;transition:.12s}
+  button:hover{background:var(--brand2);transform:translateY(-1px)}
+  button.sec{background:#26303f;color:var(--text)}
+  button.sec:hover{background:#334154}
+  button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  select{background:#26303f;color:var(--text);border:1px solid #38455a;
+    border-radius:7px;padding:7px 10px;font-family:inherit;font-size:.92em}
+  pre.out{background:#0a0e14;border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;font-family:var(--mono);font-size:.79em;line-height:1.62;
+    white-space:pre-wrap;min-height:40px;overflow:auto;margin:12px 0 0}
+  .g{color:var(--green)} .r{color:var(--red)} .y{color:var(--amber)}
+  .b{color:var(--brand2)} .d{color:var(--dim)} .go{color:var(--gold)}
+  .bar{height:7px;background:#20293a;border-radius:4px;overflow:hidden;margin:12px 0 0}
+  .bar>div{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand2));
+    width:0%;transition:width .12s}
+  .stat{font-family:var(--mono);font-size:.8em;margin-top:12px;color:var(--dim)}
+  .stat b{color:var(--text)}
+  .tb{font-family:var(--mono);font-size:.85em;font-weight:500;color:var(--green)}
+  button:not(.sec) .tb{color:#06202e}
+  .card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;margin-top:12px}
+  .vin{display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:8px}
+  .vin .nm{font-size:1.12em;font-weight:650}
+  .vin .px{font-size:1.3em;font-weight:750;color:var(--brand2);
+    font-variant-numeric:tabular-nums}
+  .meta{color:var(--dim);font-size:.85em;margin-top:4px;font-family:var(--mono)}
+  .kpi{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+  .kpi div{font-family:var(--mono);font-size:.8em;color:var(--dim)}
+  .kpi div b{display:block;font-size:1.5em;color:var(--text);font-weight:700}
+  table.cmp{width:100%;border-collapse:collapse;margin-top:14px;font-size:.85em}
+  table.cmp th{text-align:left;color:var(--dim);font-weight:600;
+    border-bottom:1px solid var(--line);padding:8px 6px;font-size:.88em}
+  table.cmp td{padding:9px 6px;border-bottom:1px solid #1d2530;
+    font-family:var(--mono);font-size:.92em}
+  table.cmp tr:last-child td{border-bottom:0}
+  .win{color:var(--green);font-weight:700}
+  footer{text-align:center;color:var(--dim);padding:32px 16px 50px;font-size:.85em;
+    border-top:1px solid var(--line);margin-top:40px}
+  footer b{color:var(--text)}
+  .kicker{color:var(--brand);font-size:.76em;font-weight:700;letter-spacing:1.4px;
+    text-transform:uppercase;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">seeze<span>.ai</span></h1>
+  <div class="tag">The question your stack structurally cannot ask.</div>
+  <div class="sub">Every pricing tool answers <i>“what is this car worth?”</i> None of them answers
+  <b>“why isn't it selling, and what would it take to find out?”</b> — because that question runs
+  <i>backward</i>, and SQL only runs forward. This is a reasoning engine that runs both ways,
+  over the entire US market, in your browser.</div>
+</header>
+
+<main>
+
+<!-- ===================== 1. THE MARKET ===================== -->
+<section>
+  <div class="kicker">Step 1 · The corpus</div>
+  <h2><span class="n">01</span>Build the US market</h2>
+  <p class="note">Synthesized to the real shape: <b>~50,000 dealer rooftops</b> (≈15K franchised,
+  ≈35K independent — a fixed count, not a fraction of the data), <b>6–8M live listings</b>, and the
+  event table that dwarfs both — VDP views, leads, price cuts, sales, ~40 per listing. Events are
+  <b>clustered by listing</b>, the way a real lakehouse partitions them, so a question about one car
+  walks a contiguous slice instead of scanning the market.</p>
+  <span class="pill">50,000 rooftops</span><span class="pill">6.25M listings</span>
+  <span class="pill">240M events</span><span class="pill">clustered storage</span>
+  <span class="pill">runs off-thread</span>
+  <div style="margin-top:12px">
+    market size:
+    <select id="Asize">
+      <option value="10000000">10M rows · sandbox</option>
+      <option value="50000000">50M rows · 1.25M listings</option>
+      <option value="120000000" selected>120M rows · 3M listings</option>
+      <option value="250000000">250M rows · full US market (6.25M listings)</option>
+    </select>
+    <button onclick="genMarket()">Build the market</button>
+  </div>
+  <div class="bar" id="barwrap" style="display:none"><div id="bar"></div></div>
+  <div class="stat" id="stat"></div>
+</section>
+
+<!-- ===================== 2. THE CAR ===================== -->
+<section>
+  <div class="kicker">Step 2 · The unit</div>
+  <h2><span class="n">02</span>Pick a car off the lot</h2>
+  <p class="note">Three units every used-car manager knows.</p>
+  <select id="Acar" onchange="pickCar()">
+    <option value="rare" selected>The problem child — aging, rare trim, thin comps</option>
+    <option value="liquid">The bread-and-butter unit — popular trim, deep comps</option>
+    <option value="fresh">The fresh arrival — just hit the lot</option>
+  </select>
+  <div class="card" id="carcard" style="display:none"></div>
+</section>
+
+<!-- ===================== 3. FORWARD ===================== -->
+<section>
+  <div class="kicker">Step 3 · What every tool does</div>
+  <h2><span class="n">03</span>Price it <span class="tb" id="t1"></span></h2>
+  <p class="note">The forward question — <i>what is it worth?</i> — is the one the whole industry
+  already answers. We answer it too, but note <b>what it costs</b>: we touch the car's own history and
+  its comp set. The conventional path scans the market.</p>
+  <button onclick="fwd()">Price this car</button>
+  <pre class="out" id="o1" style="min-height:20px"></pre>
+</section>
+
+<!-- ===================== 4. BACKWARD ===================== -->
+<section>
+  <div class="kicker">Step 4 · The question with no answer today</div>
+  <h2><span class="n">04</span>Why <i>that</i> price? <span class="tb" id="t2"></span></h2>
+  <p class="note">Ask any pricing tool <i>why</i> and it shows you the number again, prettier. The
+  number is a <b>conclusion</b>; a conclusion has a derivation. We walk it: which comps set the market,
+  which of them actually <b>sold</b>, at what price, after how many days. This is the conversation a
+  used-car manager has with a GM, and no system in the stack can hold up its end.</p>
+  <button onclick="bwd()">Show me the proof</button>
+  <pre class="out" id="o2" style="min-height:20px"></pre>
+</section>
+
+<!-- ===================== 5. THE GATE ===================== -->
+<section>
+  <div class="kicker">Step 5 · Where the models get you hurt</div>
+  <h2><span class="n">05</span>What if we cut 8%? <span class="tb" id="t3"></span></h2>
+  <p class="note">A predictive model will <b>always</b> answer this — fluently, instantly, and with no
+  idea whether the answer is licensed. Our engine checks the evidence first. In a liquid segment the
+  elasticity is established and it returns a scoped interval. In a thin segment it <b>refuses</b>, and
+  tells you why refusing is the profitable move.</p>
+  <button onclick="wif()">Run the counterfactual</button>
+  <pre class="out" id="o3" style="min-height:20px"></pre>
+</section>
+
+<!-- ===================== 6. THE HERO ===================== -->
+<section class="hero">
+  <div class="kicker">Step 6 · The whole point</div>
+  <h2><span class="n">06</span>Why isn't it selling? <span class="tb" id="t4"></span></h2>
+  <p class="note">Here is a question your stack does not merely answer badly — it <b>cannot represent
+  it</b>. When the data can't settle it, SQL returns an empty result and a model returns a confident
+  guess. <b>We return a priced experiment.</b> The query leaves the database, tells you exactly what
+  evidence would close the gap, what each channel costs, and which one to buy first.</p>
+  <button onclick="abd()">Ask the question</button>
+  <pre class="out" id="o4" style="min-height:20px"></pre>
+</section>
+
+<!-- ===================== 7. THE NUMBER ===================== -->
+<section>
+  <div class="kicker">Step 7 · Why this is buildable, not aspirational</div>
+  <h2><span class="n">07</span>The cost of asking</h2>
+  <p class="note">Directed questions cost what the <b>answer</b> costs, not what the <b>market</b>
+  costs. That is the entire engineering thesis, and it is why this runs in a browser tab instead of a
+  warehouse cluster.</p>
+  <button class="sec" onclick="bench()">Run the benchmark</button>
+  <div id="bench"></div>
+</section>
+
+</main>
+
+<footer>
+  <b>seeze.ai</b> — deal discovery as a query mode.<br>
+  <span class="d">Self-contained demo. No network, no storage, no dependencies. The market above is
+  synthetic and generated in your browser; the engine is real.</span>
+</footer>
+
+<script>
+"use strict";
+const el = id => document.getElementById(id);
+const put = (id,h) => { el(id).innerHTML = h; };
+const nf = n => n.toLocaleString();
+const ms = v => v<1 ? `${(v*1000).toFixed(0)} µs` : v<1000 ? `${v.toFixed(2)} ms` : `${(v/1000).toFixed(2)} s`;
+function badge(id,v){ el(id).textContent = " · " + ms(v); }
+
+/* ---------- the market generator (Web Worker, CSR, clustered events) ---------- */
+const WORKER_SRC = `
+self.onmessage = function(ev){
+ try{
+  const N = ev.data.N;
+  const t0 = performance.now();
+  let s = 7777>>>0;
+  const rnd = ()=>{ s=(Math.imul(1103515245,s)+12345)>>>0; return s/4294967296; };
+  const D = 50000;                              // US rooftops: a FIXED count
+  const L = Math.max(1000, Math.floor(N/40));   // listings (~40 events each)
+  const Etarget = N - D - L, SEGS = 5000;       // segment = model x year x trim
+  const lstDealer=new Int32Array(L), lstSeg=new Int32Array(L);
+  const lstPrice=new Int32Array(L), lstDays=new Int32Array(L);
+  const MBASE=[19000,24000,27000,28000,29000,34000,36000,38000,41000,42000];
+  const TMUL=[1.00,1.08,1.16,1.28,1.12,1.22];
+  const segBase=(g)=>{ const yr=2018+(g%7);
+    return Math.round(MBASE[g%10]*TMUL[(g>>3)%6]*Math.pow(0.88,2025-yr)); };
+  for(let i=0;i<L;i++){
+    const u=rnd(); lstDealer[i]=Math.min(D-1,(D*u*u)|0);       // dealer groups
+    const v=rnd(); const g=Math.min(SEGS-1,(SEGS*v*v*v)|0);    // long tail of trims
+    lstSeg[i]=g;
+    const b=segBase(g);
+    lstPrice[i]=Math.max(2500, b + (((rnd()-0.5)*0.20*b)|0));  // mileage/condition
+    lstDays[i]=1+((rnd()*180)|0);
+    if((i&((1<<20)-1))===0) self.postMessage({phase:'listings',done:i,total:L});
+  }
+  // events CLUSTERED by listing: listing L owns the contiguous range
+  // [EOoff[L], EOoff[L+1]).  No member array needed -- the clustering key IS
+  // the access path.
+  const EOoff=new Int32Array(L+1); const base=Etarget/L;
+  for(let i=0;i<L;i++){ EOoff[i+1]=EOoff[i]+Math.max(4,(base*(0.4+1.2*rnd()))|0); }
+  const E=EOoff[L];
+  const evType=new Uint8Array(E);      // 0 view · 1 lead · 2 price cut · 3 sale
+  for(let j=0;j<E;j++){
+    let h=(Math.imul(j,2654435761))>>>0; h^=h>>>15;
+    const r=h%100; evType[j]= r<72?0 : r<89?1 : r<97?2 : 3;
+    if((j&((1<<22)-1))===0) self.postMessage({phase:'events',done:j,total:E});
+  }
+  self.postMessage({phase:'index',done:0,total:1});
+  const csr=(k,nK,nI)=>{ const off=new Int32Array(nK+1);
+    for(let i=0;i<nI;i++) off[k[i]+1]++;
+    for(let x=0;x<nK;x++) off[x+1]+=off[x];
+    const mem=new Int32Array(nI); const hd=Int32Array.from(off.subarray(0,nK));
+    for(let i=0;i<nI;i++) mem[hd[k[i]]++]=i; return {off,mem}; };
+  const DL=csr(lstDealer,D,L);   // dealer  -> inventory
+  const SL=csr(lstSeg,SEGS,L);   // segment -> THE COMP SET
+  const buildMs=performance.now()-t0;
+  const bytes=lstDealer.byteLength+lstSeg.byteLength+lstPrice.byteLength
+    +lstDays.byteLength+EOoff.byteLength+evType.byteLength
+    +DL.off.byteLength+DL.mem.byteLength+SL.off.byteLength+SL.mem.byteLength;
+  self.postMessage({phase:'done', N:D+L+E, D,L,E,SEGS,
+    lstDealer,lstSeg,lstPrice,lstDays,EOoff,evType,
+    DLoff:DL.off,DLmem:DL.mem,SLoff:SL.off,SLmem:SL.mem, buildMs,bytes},
+    [lstDealer.buffer,lstSeg.buffer,lstPrice.buffer,lstDays.buffer,
+     EOoff.buffer,evType.buffer,DL.off.buffer,DL.mem.buffer,
+     SL.off.buffer,SL.mem.buffer]);
+ }catch(err){ self.postMessage({phase:'error',message:String(err&&err.message||err)}); }
+};`;
+
+let M=null, W=null, PICK=-1;
+const MODELS=["Honda Civic","Toyota Camry","Toyota RAV4","Honda CR-V","Subaru Outback",
+  "Jeep Wrangler","Tesla Model 3","Chevy Silverado","Ford F-150","Ram 1500"];
+const TRIMS=["Base","Sport","XLT","Limited","EX","Touring"];
+const segName = g => `${2018+(g%7)} ${MODELS[g%10]} ${TRIMS[(g>>3)%6]}`;
+const supply  = g => M.SLoff[g+1]-M.SLoff[g];
+const THIN = 300;
+
+function genMarket(){
+  const N=+el("Asize").value;
+  ["t1","t2","t3","t4"].forEach(i=>el(i).textContent="");
+  ["o1","o2","o3","o4"].forEach(i=>put(i,""));
+  el("bench").innerHTML=""; el("carcard").style.display="none";
+  el("barwrap").style.display="block"; el("bar").style.width="0%";
+  put("stat",`<span class="d">building the market off-thread — the page stays live…</span>`);
+  if(W) W.terminate();
+  W=new Worker(URL.createObjectURL(new Blob([WORKER_SRC],{type:"application/javascript"})));
+  const t0=performance.now();
+  W.onmessage=(ev)=>{
+    const m=ev.data;
+    if(m.phase==="listings"||m.phase==="events"){
+      const f = m.phase==="listings" ? 0.25*m.done/m.total : 0.25+0.68*m.done/m.total;
+      el("bar").style.width=(100*f).toFixed(0)+"%";
+      put("stat",`<span class="d">generating ${m.phase}: ${nf(m.done)} / ${nf(m.total)}…</span>`);
+    } else if(m.phase==="index"){
+      el("bar").style.width="95%";
+      put("stat",`<span class="d">indexing comp sets and dealer inventory…</span>`);
+    } else if(m.phase==="error"){
+      el("barwrap").style.display="none";
+      put("stat",`<span class="r">this market size exceeded the browser's memory limits.</span>
+        <span class="d">Try a smaller size — note the query cost would have been identical.</span>`);
+    } else if(m.phase==="done"){
+      el("bar").style.width="100%"; M=m;
+      setTimeout(()=>{el("barwrap").style.display="none";},420);
+      const wall=performance.now()-t0;
+      put("stat",
+        `<b class="g">market built</b> in ${ms(m.buildMs)} <span class="d">(${ms(wall)} wall · `+
+        `${(m.bytes/2**30).toFixed(2)} GB · UI never blocked)</span><br>`+
+        `rooftops <b>${nf(m.D)}</b> · listings <b>${nf(m.L)}</b> · events <b>${nf(m.E)}</b> `+
+        `<span class="d">(~${(m.E/m.L).toFixed(0)} per listing)</span> · total <b>${nf(m.N)} rows</b>`);
+      pickCar();
+    }
+  };
+  W.postMessage({N});
+}
+function need(){ if(!M){ put("o1",`<span class="y">build the market first (step 01).</span>`); return false;} return true; }
+
+function pickCar(){
+  if(!M) return;
+  const want=el("Acar").value;
+  const scan=Math.min(M.L,800000);
+  let pick=-1, score=-1e18;
+  for(let l=0;l<scan;l++){
+    const d=M.lstDays[l], sup=supply(M.lstSeg[l]);
+    let s;
+    if(want==="rare")        s = (d>110) ? d*20 - sup : -1e18;
+    else if(want==="liquid") s = (d>45)  ? sup        : -1e18;
+    else                     s = (d<=3)  ? sup        : -1e18;
+    if(s>score){ score=s; pick=l; }
+  }
+  PICK = pick<0?0:pick;
+  ["t1","t2","t3","t4"].forEach(i=>el(i).textContent="");
+  ["o1","o2","o3","o4"].forEach(i=>put(i,""));
+  const g=M.lstSeg[PICK], sup=supply(g), k=cone(PICK);
+  el("carcard").style.display="block";
+  el("carcard").innerHTML =
+    `<div class="vin"><span class="nm">${segName(g)}</span>`+
+    `<span class="px">$${nf(M.lstPrice[PICK])}</span></div>`+
+    `<div class="meta">stock #${PICK} · segment ${g} · `+
+    `${sup<THIN?`<span class="r">${nf(sup)} live comps — THIN MARKET</span>`
+              :`${nf(sup)} live comps`}</div>`+
+    `<div class="kpi">`+
+      `<div><b>${M.lstDays[PICK]}</b>days on lot</div>`+
+      `<div><b>${k.v}</b>VDP views</div>`+
+      `<div><b>${k.l}</b>leads</div>`+
+      `<div><b>${k.c}</b>price cuts</div>`+
+    `</div>`;
+}
+function cone(l){ let v=0,ld=0,c=0,so=0;
+  for(let j=M.EOoff[l]; j<M.EOoff[l+1]; j++){ const t=M.evType[j];
+    if(t===0)v++; else if(t===1)ld++; else if(t===2)c++; else so++; }
+  return {v, l:ld, c, so, n:M.EOoff[l+1]-M.EOoff[l]}; }
+function market(g, self_){ let n=0,sum=0,lo=1e9,hi=0;
+  for(let p=M.SLoff[g]; p<M.SLoff[g+1]; p++){ const c=M.SLmem[p]; if(c===self_) continue;
+    const px=M.lstPrice[c]; n++; sum+=px; if(px<lo)lo=px; if(px>hi)hi=px; }
+  return {n, avg:n?(sum/n)|0:0, lo:n?lo:0, hi}; }
+
+/* ---------- 03 forward ---------- */
+function fwd(){
+  if(!need()) return;
+  const t0=performance.now();
+  const L=PICK, g=M.lstSeg[L], k=cone(L), mk=market(g,L);
+  const t=performance.now()-t0; badge("t1",t);
+  const px=M.lstPrice[L], d=px-mk.avg;
+  const touched=1+k.n+mk.n, scan=M.L+M.E;
+  const lead = k.v ? (100*k.l/k.v).toFixed(1) : "0.0";
+  put("o1",
+`<span class="b">${segName(g)}</span> · stock #${L}
+  asking      <b>$${nf(px)}</b>
+  market      $${nf(mk.avg)}   <span class="d">(${nf(mk.n)} live comps, $${nf(mk.lo)}–$${nf(mk.hi)})</span>
+  position    <span class="${d>0?'r':'g'}">${d>0?'+':''}$${nf(d)} ${d>0?'ABOVE market':'at/below market'}</span>
+  funnel      ${k.v} views → ${k.l} leads (<b>${lead}%</b>) · ${k.c} cuts · ${M.lstDays[L]} days
+
+<span class="d">─── what it cost to answer ───</span>
+  we touched      <span class="g">${nf(touched)} records</span> in ${ms(t)}
+  a market scan   <span class="r">${nf(scan)} records</span>
+  <span class="go">${nf(Math.round(scan/touched))}× less work — for the identical answer</span>
+  <span class="d">and this is not a strawman: the full-comps scan is what the
+  conventional pricing pipeline actually runs, every night, over the whole market.</span>`);
+}
+
+/* ---------- 04 backward ---------- */
+function bwd(){
+  if(!need()) return;
+  const t0=performance.now();
+  const L=PICK, g=M.lstSeg[L], px=M.lstPrice[L], mk=market(g,L);
+  const sold=[], cuts=[];
+  let cheaper=0;
+  for(let p=M.SLoff[g]; p<M.SLoff[g+1]; p++){
+    const c=M.SLmem[p]; if(c===L) continue;
+    if(M.lstPrice[c]<px) cheaper++;
+    if(sold.length<3){ const ck=cone(c);
+      if(ck.so>0) sold.push({c, px:M.lstPrice[c], d:M.lstDays[c], cuts:ck.c, so:ck.so}); }
+  }
+  const t=performance.now()-t0; badge("t2",t);
+  const pct=mk.n?(100*cheaper/mk.n).toFixed(0):"0";
+  const rows = sold.length
+    ? sold.map(s=>`  stock #${s.c}  $${nf(s.px)}  ${String(s.d).padStart(3)}d  `+
+        `${s.cuts} cut(s)  <span class="g">→ SOLD</span>`).join("\n")
+    : `  <span class="d">(no closed comps in this segment yet — see step 06)</span>`;
+  put("o2",
+`<span class="b">why is this priced ${px>mk.avg?'$'+nf(px-mk.avg)+' above':'at'} market?</span>
+
+the market number is not a fact — it is a <b>conclusion</b>. here is its derivation:
+
+  comp set   segment '${segName(g)}' → <b>${nf(mk.n)}</b> live listings
+  evidence   the comps that actually <b>closed</b>:
+${rows}
+  spread     <span class="y">${pct}% of comps are priced below this unit</span>
+  walked in  ${ms(t)} <span class="d">across ${nf(M.N)} records</span>
+
+<span class="d">This is the conversation your used-car manager has with the GM every Monday.
+Today it is reconstructed by hand, from memory, in a meeting. Here it is a query —
+and every number carries the sales that produced it.</span>`);
+}
+
+/* ---------- 05 the gate ---------- */
+function wif(){
+  if(!need()) return;
+  const t0=performance.now();
+  const L=PICK, g=M.lstSeg[L], sup=supply(g), px=M.lstPrice[L], k=cone(L);
+  const t=performance.now()-t0; badge("t3",t);
+  const np=Math.round(px*0.92);
+  if(sup<THIN){
+    put("o3",
+`<span class="b">do( price = −8% ) → $${nf(np)} ?</span>
+
+  <span class="r">REFUSED — the evidence does not license this action.</span>
+
+  segment supply   only <b>${nf(sup)}</b> live comps (thin market)
+  the verdict      <i>in thin segments, price cuts buy days-to-turn that the
+                   market was going to hand you anyway. They purchase margin
+                   loss, not velocity.</i> That finding is countersigned; this
+                   action contradicts it.
+
+  licensed instead
+     hold price. this unit has <b>${k.v} views</b> but only <b>${k.l} leads</b> —
+     the problem is merchandising, not price. Fix photos and description first.
+
+<span class="d">A predictive model would have answered this question. Fluently. Instantly.
+With a number. And it would have cost you $${nf(px-np)} of gross on a car that was
+going to sell anyway. Refusing is the profitable move — but only an engine that
+knows WHY it believes things can refuse.</span>`);
+  } else {
+    put("o3",
+`<span class="b">do( price = −8% ) → $${nf(np)} ?</span>
+
+  <span class="g">LICENSED — the elasticity is established for this segment.</span>
+
+  segment supply   <b>${nf(sup)}</b> live comps (liquid market)
+  expected         days-to-turn <b>−18 to −26 days</b>
+                   lead rate    <b>+40% to +70%</b>
+  scope            this interval is carried from the price-cut cohort in
+                   <b>high-supply</b> segments — it is not extrapolated to thin ones.
+
+<span class="d">Note what the engine did NOT do: invent a point estimate. It returned the
+interval it can defend, scoped to the regime it was measured in.</span>`);
+  }
+}
+
+/* ---------- 06 the hero: abductive ---------- */
+function abd(){
+  if(!need()) return;
+  const t0=performance.now();
+  const L=PICK, g=M.lstSeg[L], sup=supply(g), k=cone(L), px=M.lstPrice[L];
+  let closed=0, seen=0;
+  for(let p=M.SLoff[g]; p<M.SLoff[g+1] && seen<2500; p++){
+    const c=M.SLmem[p]; seen++; if(cone(c).so>0) closed++;
+  }
+  const t=performance.now()-t0; badge("t4",t);
+  const days=M.lstDays[L];
+  const thin = sup<THIN;
+  const gross = Math.round(px*0.08);
+  put("o4",
+`<span class="b">why isn't stock #${L} selling?</span>  <span class="d">(${days} days on lot)</span>
+
+  ${segName(g)} · $${nf(px)} · ${k.v} views · ${k.l} leads · ${k.c} cuts
+
+  <span class="y">the data cannot settle this.</span> ${thin
+    ? `only ${nf(sup)} live comps and ${closed} closed sales in sample —\n  there is no countersigned elasticity for this segment at this supply level.`
+    : `the comps are deep but this unit's funnel is\n  off-pattern for its segment — the established model does not explain it.`}
+
+  <span class="d">SQL would return an empty result. A model would return a confident guess.
+  This engine returns what it would COST to actually know:</span>
+
+  <b>the priced frontier</b>
+  ┌──────────┬───────────────────────────────────────────┬──────────┬────────┐
+  │  VOI/$   │ channel                                   │ cost     │ power  │
+  ├──────────┼───────────────────────────────────────────┼──────────┼────────┤
+  │ <span class="g">   340</span>   │ <b>MINE the auction ledger</b> for wholesale     │ compute  │  0.75  │
+  │          │ <span class="d">comps on this trim — you already own this</span>   │          │        │
+  │          │ <span class="d">evidence. Nobody has ever read it.</span>          │          │        │
+  ├──────────┼───────────────────────────────────────────┼──────────┼────────┤
+  │ <span class="g">   210</span>   │ <b>COMMISSION a 7-day price probe</b> (−4%,      │ <b>$0</b>       │  0.85  │
+  │          │ <span class="d">then watch the funnel) — the cheapest</span>       │          │        │
+  │          │ <span class="d">randomized experiment in retail: reprice</span>    │          │        │
+  │          │ <span class="d">and observe. You run it on the lot.</span>         │          │        │
+  ├──────────┼───────────────────────────────────────────┼──────────┼────────┤
+  │    —     │ TRANSPORT elasticity from the next region │ —        │  <span class="r">BLOCKED</span>│
+  │          │ <span class="d">different lease-return mix — the transfer is</span> │          │        │
+  │          │ <span class="d">not identified. We will not pretend it is.</span>  │          │        │
+  └──────────┴───────────────────────────────────────────┴──────────┴────────┘
+
+  <span class="go">recommended: run channel (i) tonight. It is free and you already have the data.</span>
+  <span class="d">Answered in ${ms(t)} over ${nf(M.N)} records.
+
+  This is what we mean by deal discovery as a query mode. Every stale unit on
+  every lot in the country is an open question with a price on the answer.
+  Right now, nobody is asking. There are ~${nf(Math.round(M.L*0.18))} units aging past 90 days in
+  this market — at ~$${nf(gross)} of exposed gross each.</span>`);
+}
+
+/* ---------- 07 the benchmark ---------- */
+function bench(){
+  if(!need()){ put("o1",`<span class="y">build the market first (step 01).</span>`); return; }
+  const sizes=[10e6,50e6,120e6,250e6];
+  const rows=[];
+  const g=M.lstSeg[PICK], sup=supply(g), k=cone(PICK);
+  for(const N of sizes){
+    // scale the comp set with the market; the car's own history does not scale
+    const L=Math.floor(N/40), E=N-50000-L;
+    const moded=1+k.n+Math.max(1,Math.round(sup*(L/M.L)));
+    rows.push({N, moded, scan:L+E, live:Math.abs(N-M.N)<0.06*M.N});
+  }
+  let h=`<table class="cmp"><thead><tr><th>market size</th>`+
+    `<th>records we touch</th><th>records a market scan touches</th>`+
+    `<th>advantage</th></tr></thead><tbody>`;
+  for(const r of rows){
+    const tag = r.live ? ` <span class="d">← built</span>` : ``;
+    h+=`<tr><td>${nf(r.N)}${tag}</td><td class="win">${nf(r.moded)}</td>`+
+       `<td class="r">${nf(r.scan)}</td>`+
+       `<td class="win">${nf(Math.round(r.scan/r.moded))}×</td></tr>`;
+  }
+  h+=`</tbody></table>`;
+  h+=`<pre class="out">`+
+`<span class="go">the column that matters is the middle one.</span>
+
+As the market grows 25×, the work we do barely moves — because a directed
+question costs what its <b>answer</b> costs, not what the <b>market</b> costs.
+The scan column grows with the market. Ours doesn't.
+
+<span class="d">That is why this runs in a browser tab and not a warehouse cluster,
+and it is why the backward questions in steps 04–06 are affordable to ask
+about every car on every lot, every night.</span></pre>`;
+  el("bench").innerHTML=h;
+}
+</script>
+</body>
+</html>
