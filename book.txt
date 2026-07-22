@@ -1,0 +1,2019 @@
+A Volume of the Collaborative Consciousness
+Corpus
+The Compiled
+Question
+Some Notes on Asking Things Backward
+demand descending
+answers ascending Borislav Agapiev × Qwen3.8-Max
+Portland · Belgrade · the context window
+July 19, 2026
+you must not fool yourself · and you are the easiest person to fool
+2
+Contents
+ANoteAbouttheVoiceandtheMethod v
+I TheTrouble 1
+1 TheLanguageThatOnlyGoesOneWay 3
+1.1 Aturnstile . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Thethreethingsthatfalloutofthegeometry . . . . . . . . . . . . . . . . . 3
+1.3 Thequestionsontheotherside . . . . . . . . . . . . . . . . . . . . . . . . . 4
+1.4 Theinterface,andwhythetroubleisnow . . . . . . . . . . . . . . . . . . . 5
+1.5 Fiftyyearsofpeoplebuildingthemissinghalfbyhand . . . . . . . . . . . . 5
+1.6 Thesamehole, frominsidethehouse . . . . . . . . . . . . . . . . . . . . . . 6
+2 TheLanguageThatWentEveryWay 7
+2.1 Writeitonce,askitfourways . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.2 Thefirsttimethedatabasepeoplecamearound . . . . . . . . . . . . . . . . 8
+2.3 Thewrongaxis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+2.4 Whatthepromisewouldmeanonalakehouse . . . . . . . . . . . . . . . . . 9
+2.5 Thefineprint . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3WhattheMarvelCosts 11
+3.1 Themechanismunderthetrick . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.2 Thearithmetic,sonobodycanwavetheirhands . . . . . . . . . . . . . . . . 11
+3.3 Theretreat: keeptheclauses, losethemodes . . . . . . . . . . . . . . . . . . 12
+3.4 Thefolklore,andthespringsunderthefloor . . . . . . . . . . . . . . . . . . 13
+3.5 Thedilemma,ontherecord . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+II TheTrick 15
+4 YouAlreadyKnowWhichWayItRuns 17
+4.1 Theobservation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.2 Twowitnessesthatthisworks . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+4.3 Determinismridesalong . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+4.4 Anoldfriendwithanewhaircut . . . . . . . . . . . . . . . . . . . . . . . . 19
+4.5 Firstsightofthelakehouse. . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5 TheTrickItself: lrec 21
+5.1 Wheretheeasystoryrunsout . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+5.2 Moveone: demotetheunknown . . . . . . . . . . . . . . . . . . . . . . . . . 21
+5.3 Movetwo: onerecursion,twocurrents . . . . . . . . . . . . . . . . . . . . . 22
+i
+ii Contents
+5.4 Movethree: thecontinuationscomeout,notin . . . . . . . . . . . . . . . . 23
+5.5 Theneighboringmiracle . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5.6 Thewholething,workedsmall . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5.7 Whatthehingeholds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+6 Demand:TheCurrentWiththeMoneyInIt 27
+6.1 Whythiscurrentgetsitsownchapter . . . . . . . . . . . . . . . . . . . . . . 27
+6.2 Thelazylineage . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+6.3 Thearithmeticofrelevance. . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+6.4 Volcano’sconfession. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+6.5 Demandunderoptimization . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+6.6 Whatdemandcannotknow . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+7 TheIndustryDiscoversHalfofIt,andCallsItMagic 31
+7.1 Theholetheretreatdug . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+7.2 Watchtherewritingwork . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+7.3 Onthename,briefly,becauseitmatters . . . . . . . . . . . . . . . . . . . . 33
+7.4 Thetwinfromtheotherside,andthematuretradition . . . . . . . . . . . . 33
+7.5 Wherethespecialcasestops . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+III TheMachine 35
+8 AFactBaseThatDoesn’tFool Itself 37
+8.1 Themachineneedstherightfuel . . . . . . . . . . . . . . . . . . . . . . . . 37
+8.2 Fouranswerstoonelookup . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+8.3 Thephysical layerisalreadythere. . . . . . . . . . . . . . . . . . . . . . . . 38
+9 OneRelation,FourQuestions 41
+9.1 Thecompass. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 41
+9.2 North: forward,consequenceinscope . . . . . . . . . . . . . . . . . . . . . . 41
+9.3 East: backward,whyasatraversal . . . . . . . . . . . . . . . . . . . . . . . 42
+9.4 West: counterfactual,gatednotgranted. . . . . . . . . . . . . . . . . . . . . 43
+9.5 South: abductive,thequestionthatexits . . . . . . . . . . . . . . . . . . . . 43
+10LoweringItOntotheIron 45
+10.1Fromsemanticstomachine . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+10.2Headsbecomecolumns,matchingbecomesvectors . . . . . . . . . . . . . . . 45
+10.3Recursionbydeltas,demandbystandingsets . . . . . . . . . . . . . . . . . 45
+10.4Thenewjoingeneration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+10.5Asurfaceyoucanactuallyadopt . . . . . . . . . . . . . . . . . . . . . . . . 47
+10.6Thecostmodel isthemodefamily . . . . . . . . . . . . . . . . . . . . . . . 47
+Contents iii
+11TheQueryThatBotherstheWorld 49
+11.1Queriesthatterminateintheworld . . . . . . . . . . . . . . . . . . . . . . . 49
+11.2Frominferencetosyntax . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+11.3Pricingit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+11.4Theloop,closed. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+12OneQuestion,RunFourWays:AnAfternoon 53
+12.1Thescene . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+12.2Twoo’clock: theplanner, forward . . . . . . . . . . . . . . . . . . . . . . . . 53
+12.3Threeo’clock: theauditor,backward . . . . . . . . . . . . . . . . . . . . . . 54
+12.4Fouro’clock: theagentatthegate . . . . . . . . . . . . . . . . . . . . . . . 54
+12.5Fiveo’clock: thequestionleavesthebuilding. . . . . . . . . . . . . . . . . . 54
+12.6Thesameafternoon,withouttheengine . . . . . . . . . . . . . . . . . . . . 55
+12.7Theaccounting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+13TheBill, theTiming,andWhattoBuildMonday 57
+13.1Whynow . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 57
+13.2Theengineisthebackward-passproduct . . . . . . . . . . . . . . . . . . . . 57
+13.3Objections,answered . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+13.4WhattobuildMonday . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+13.5Whatwascompiled . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 59
+ATheWholeBookonaFewIndexCards 61
+Coda:TheLineThatRunsBackward 63
+Bibliography 65
+iv
+Contents
+A Note About the Voice and the Method
+The first principle is that you must not
+fool yourself—and you are the easiest
+person to fool.
+This book is written in a borrowed register. The plain talk, the impatience with fancy
+words, the insistence that you show me the mechanism and not the name of the mechanism—
+that manner belongs to Richard Feynman, and everybody who has read him knows it on
+sight [75, 76].
+So let us be honest right at the start, the way he would have insisted. These are not
+his words. He never saw a lakehouse and never heard of a foundation model, and he is not
+available for comment. Every sentence here was written by the two authors on the cover,
+one human and one machine, and every opinion is ours. Where we lean on something he
+actually said or wrote—the cargo cult lecture [75], the appendix he attached to the Challenger
+report over the objections of everyone around him [76], the diagrams with the backward
+legs [74]—we cite it, so you can go check, which is the only kind of respect worth paying to a
+man who spent his life telling people to go check.
+Why borrow the voice at all? Because the argument in this book is already his argument,
+and it kept coming out in his cadence no matter how we wrote it. The book says: an answer
+that cannot tell you how it knows is not an answer, it is a decoration. It says: the fluent
+machine that gives you a number for every question, including the questions it has no business
+answering, is running a cargo cult, and the planes are not going to land. It says: when your
+data cannot settle the matter, the honest move is not to guess prettily but to go bother the
+world and find out. And it says the deepest thing he ever taught anybody, which is that the
+first principle is that you must not fool yourself, and you are the easiest person to fool.
+There is also a technical reason, and it is not decoration either. The whole point of this
+book is that a question has two halves—one running forward from the data to the answer,
+one running backward from the answer to what would justify it—and that the second half
+is the one everybody threw away. Now, who taught physics that the backward line is not
+a mistake but the other half of the object? Who drew the positron as an electron going
+the wrong way in time and made it work [74, 77]? We did not pick this voice because it is
+charming. We picked it because the man understood, better than anyone, that when a thing
+runs backward you should not throw it away. You should ask what it is telling you.
+How this book started. This book started because somebody asked a simple question and
+got a wrong answer, and the person who gave the wrong answer was me. We had just finished
+another book—a long one, about how a company ought to keep track of what it actually
+knows, as opposed to what it has merely noticed [78]. The last chapter of that book was
+about where the idea came from: a dissertation written in 1992 about turning logic programs
+into functional programs [33]. Nice chapter. Historical. The kind of thing you put at the end
+so the reader can see the family tree.
+v
+vi
+Then the other author read the finished book, all the way through, and asked the question
+every practical person asks: which chapters are the solutions? Which chapters tell me what
+to do? And I gave him a list. A good list! And the historical chapter, the one about 1992,
+was not on it. Because it was history, you see. It was background.
+He wrote back and said, in effect: you have missed the point of your own chapter. That
+thing is not background. That thing is the next engine.
+Now, this is the part I want you to notice, because it is the whole reason for the book
+you are holding. He was right, and I was wrong, and I was wrong in a very specific and very
+common way. I had filed the idea under a label—“history,” “lineage,” “theory”—and once a
+thing has a label you stop looking at it. You know its name. You feel like you understand it.
+This is the oldest trap there is, and the fact that I walked into it while writing a book whose
+entire subject is the difference between naming a thing and knowing a thing—well. You can
+laugh. I did.
+The thing in the chapter, in one page. Every database in the world speaks sql, and
+sql runs one way. You give it data, it gives you an answer. Data in, answer out. It is a
+magnificent machine and it has one direction, like a turnstile.
+But look at the questions people actually ask. Why did the northeast churn go up? What
+would it take to know whether the discount is doing anything? Which customer is missing
+from this list who ought to be on it? Every one of those questions runs the other way—from
+the answer back toward the data, from the conclusion back toward the evidence, from the
+goal back toward the experiment that would settle it. And the turnstile does not turn that
+way. It cannot. There is no grammar for it.
+Now, logic programming solved this in 1972. In Prolog you write down a relation once
+and you can ask it in any direction you like [10]. Beautiful. And it was too expensive to
+run—all that unification, all those logical variables, all that searching [17]—and at the scale
+of a modern data warehouse it is not slow, it is ridiculous. So the database people gave up
+the directions and kept the scale, and we have been living with the turnstile ever since.
+Here is the thing in the chapter. The price was never the price of running a question
+backward. The price was the price of deciding which way it runs while it is running. If
+you know the direction ahead of time—and you always do! the constants are sitting right
+there in the query!—then the whole expensive machine evaporates. Unification collapses into
+pattern matching. The logical variables disappear. And the two directions survive as a pair
+of ordinary equations: one carrying values up from the data, one carrying demand down from
+the question. Two currents in one wire.
+That is the 1992 result [33], and thirty-four years later it turns out to be the specification
+of a query engine for a half-trillion-row lakehouse, which is a thing that did not exist when it
+was written. Nobody planned that. That is just how it worked out, and I think it is worth a
+book.
+What kind of book this is. Not a textbook. I hate textbooks. A textbook tells you the
+answer and hides the trouble, and then you have no idea why anybody bothered. This one
+has three parts, and they go in the order the trouble actually goes. Part One is the trouble:
+what the one-way language cannot ask, what Prolog promised, and exactly what it cost, in
+numbers, so you can see for yourself why everyone quit. Part Two is the trick: modes, the
+lrec construction, demand as a thing that flows downhill, and the funny business where
+Chapter 0. A Note About the Voice and the Method
+vii
+the database people reinvented half of it by hand and called it magic. Part Three is the
+machine: what you build, how it runs, what each question costs, and the mode nobody has
+ever shipped—the one where the machine runs out of data and, instead of lying to you, tells
+you what an experiment would cost.
+Every reference in here is real and you can go look it up. That is not a boast, that is the
+minimum. If I cite a thing, go read the thing. If I am wrong, you will find out, and so will I,
+which is the point.
+And one more thing, since we are being honest about method. This book was written by
+a person and a machine, together, arguing. One of us generates and one of us checks, and
+then we swap. The book is about why an answer needs a warrant. It would have been pretty
+funny to write it any other way.
+—B.A. and Q.
+Portland, Belgrade, and the context window
+July 2026
+viii
+Part I
+The Trouble
+1
+
+Chapter 1
+The Language That Only Goes One
+Way
+The form is never the thing.
+1.1 A turnstile
+I want to start with something so ordinary that nobody looks at it anymore, which is usually
+where the interesting stuff is hiding.
+In 1970 a man named Codd wrote a paper [1] and it changed everything. Before Codd,
+if you wanted data out of a machine you had to tell the machine how to go get it—follow
+this pointer, walk down that chain. Codd said: forget that. Just say what you want. A
+table is a relation, a query is an operation on relations, and the machine can figure out the
+how by itself. Then they built a language for it [2], and an optimizer so the machine really
+could figure out the how [3], and the whole thing worked so well that fifty years later every
+warehouse and every dashboard and every chatbot with a database behind it is still speaking
+that language.
+Terrific. Now look at it.
+It runs one way. You put tables in the FROM clause and an answer comes out the bottom.
+The tables are always the input. The answer is always the output. And there is no place—not
+a keyword, not a clause, not a corner of the grammar—where you can hold the answer still
+and ask the machine to run toward the data. It is a turnstile. It turns one way, and it turns
+beautifully, and that is all it does.
+Now, when I say a thing like that, the natural reaction is: so what? Of course it computes
+answers from data. What else would it do? I will tell you what else. Watch.
+1.2 The three things that fall out of the geometry
+Look at Figure 1.1 and follow the arrows. Everything points the same way. And three things
+follow from that—not from any design decision anybody made, just from the shape.
+1. The answer cannot be interrogated. The result comes out and it remembers nothing.
+Ask the machine “why is this row here?” and there is no such question. It threw the
+derivation away at every single operator, because why would it keep it? Nobody asked for
+it.
+3
+4
+1.3. The questions on the other side
+“here is the answer—now which facts?”
+not a sentence in the language
+listings
+6,000,000
+γ group
+▷◁ join
+σ filter
+answer
+Figure 1.1: The turnstile. Every arrow points the same direction, and that is not a bug
+anybody introduced—it is the shape of the thing. The dashed line is the question you cannot
+ask.
+Now, the database community knows about this, and being clever people they built the
+derivation-tracking back on afterward—provenance, they call it, and there is beautiful
+work in it [4, 5, 6]. But stop and look at what that means. They had to bolt the backward
+direction onto the outside of the language, because the language throws it away on the
+inside. When people keep rebuilding a thing on the outside of your system, that thing
+belongs on the inside, and you have a design problem.
+2. You cannot state a goal. There is no way to hand the machine a conclusion and say:
+find me the facts that would make this true. sql can check whether a row satisfies a
+condition. It cannot be handed a wish and asked to search for what would grant it.
+That sounds like philosophy. It is not. Every planning question on earth has exactly that
+shape. What price clears this inventory? What change moves this number? What record
+is missing whose presence would complete the pattern? Those are goals, and the turnstile
+does not take goals.
+3. Empty means nothing. Run a query, get zero rows. What did you learn? You learned
+that the machine found nothing. You did not learn whether the thing is false, or whether
+nobody ever looked. And the convention that papers over this—“if I can’t derive it, it’s
+false” [13]—is a perfectly good rule for airline seats and an absolute disaster for knowledge,
+where the difference between we checked and it’s not true and nobody has ever checked is
+the entire ballgame [78].
+1.3 The questions on the other side
+All right. Now let us look at the questions people are actually asking these machines. Not
+the questions in the textbook. The ones in the building.
+• “Why did churn spike in the northeast?” That is a request for a derivation. The person
+wants the chain: this, because that, because that. What can the turnstile offer? A
+GROUP BY. It will slice the churn by region and hand back a table, and the person will
+read the word because into it, because they are human and the table is sitting right
+there next to the question. That is not an answer. That is a costume.
+• “What evidence would settle whether the discount drives renewal?” That runs from a
+goal backward to the evidence. There is no sql sentence that touches any part of it.
+Chapter 1. The Language That Only Goes One Way
+5
+• “Which suppliers should exist in this network but don’t?” Now the answer is a row that
+does not exist. The logicians have a name for this—abduction [38]—and the turnstile’s
+inputs are, by construction, only the things that are.
+And the plain everyday one: the same relationship gets asked in four directions in one
+week—which customers did this rep close, which rep closed this customer, which pairs look
+funny—and you write four queries, and maintain four dashboards, and the single underlying
+fact that they are one relation wearing four hats is expressed nowhere in the system. It lives
+in somebody’s head, and then that person leaves.
+1.4 The interface, and why the trouble is now
+For fifty years there was a human buffer. You asked the analyst the backward question, and
+the analyst—being a person, with judgment—translated it into forward queries, ran them,
+thought about it, and told you what they thought. The losses in that translation were real
+but they were absorbed by a salary.
+The buffer is gone. Now you type the backward question into a box, in English, and
+something answers you. Immediately. Fluently.
+And what is it doing? It cannot run the question you asked, because no engine underneath
+it can run the question you asked. So it does the only thing available: it rewrites your
+question into the nearest forward one, runs that, and then narrates the result back to you in
+the grammar of the question you actually asked. It says because. It says would. It says if you
+had.
+The machinery for this got very good very fast [48, 47]: prediction over tables, at enormous
+scale, for free. Which means the paraphrase gets faster, smoother, and more confident with
+every release, while the question you asked remains exactly as unanswered as Codd left it in
+1970.
+I want to be careful here, because I am not saying anybody is lying. Nobody is lying.
+The models are doing precisely what they were built to do, and doing it magnificently. That
+is the trouble. It is what Feynman called cargo cult science [75], and the thing people always
+miss about that story is that the islanders were not frauds. They built the runway carefully.
+They wore the headphones. They did everything right, in form. The planes did not land,
+because the form was not the thing. The form is never the thing.
+So: an answer that arrives in the shape of a because, with no mechanism behind it, is
+a bamboo control tower. It looks like the thing. And now we are wiring it to autonomous
+agents that go out and act on it, which is the point in the story where somebody gets hurt.
+1.5 Fifty years of people building the missing half by
+hand
+Here is the tell, and once you see it you cannot unsee it. Look at what the industry has built
+around the language, over and over, independently, for decades:
+• Provenance systems, to recover the derivation the operators discard [4, 6].
+6
+1.6. The same hole, from inside the house
+• Recursive queries, and then magic rewritings to stop the recursion from computing
+the whole universe just to answer about one person—and that is Chapter 7, and it is
+the funniest chapter in the book [22, 16].
+• Lineage graphs in the governance layer, keeping exactly the derivation record the
+query language threw away [42].
+• Reverse query processing, to generate data from desired answers.
+• The view-update problem, which we will get to in a moment, and which is the same
+hole viewed from inside the house.
+Every one of these is competent. Not one of them is a language. And their union is a
+scattered, per-system, hand-built reconstruction of one single missing facility: the question,
+runnable in every direction it has.
+1.6 The same hole, from inside the house
+One more piece of evidence, and I like this one best, because it shows the trouble arising
+with nobody even asking a backward question.
+A view is just a query with a name. Now: can you update through it? The user changes
+the derived table and expects the base tables to change accordingly. To do that you must
+run the definition backward—from the output you want, to the inputs that would produce it.
+They saw this immediately, in the model’s adolescence [53]. And it turns out most views
+admit many translations of an update, or none, and choosing requires information the forward
+query threw away. So the relational systems did the only thing they could: they restricted
+the problem to the tiny class where the backward direction happens to be unambiguous, and
+everybody has lived with that ever since.
+Meanwhile the programming-language people picked the problem up and made something
+lovely out of it—lenses, they call them [54]: a get that runs forward, a put that runs backward,
+defined together, obeying laws together. Paired. Co-defined.
+Hear the rhyme? Hold onto it. In Chapter 5 the same shape is going to come back and it
+is going to be the whole answer.
+And notice what we have learned: the industry’s forty-year inability to update through
+an interesting view, and its inability to tell you why an answer is what it is, are the same
+missing current. One hole. Two symptoms. Which is very good news, actually—because it
+means you only have to fix one thing.
+Now. Somebody did fix it. In 1972. And then it cost too much, and everybody quit.
+That is the next two chapters: the promise, and the bill.
+Chapter 2
+The Language That Went Every Way
+Algorithm = logic + control.
+—Kowalski, 1979
+2.1 Write it once, ask it four ways
+In 1972, in Marseille, some people built a language out of logic [10]. The raw material was
+Robinson’s resolution principle [7]—a single mechanical rule for making deductions—plus
+Kowalski’s insight that a certain fragment of logic, the Horn clauses, could be read as a
+programming language [8]. They called the thing Prolog, and I want to show you what it
+bought, because it bought exactly the thing Chapter 1 said was missing, and it bought it in
+one move.
+You write this:
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
+Two lines. An ancestor is a parent, or a parent of an ancestor. Notice what the two lines
+do not say: they do not say which of X and Y you are going to know when you show up
+with a question. They are silent about direction. And because they are silent about it, you
+get every direction (Figure 2.1). Hand it X and it finds the descendants. Hand it Y and it
+finds the ancestors. Hand it both and it says yes or no. Hand it neither and it enumerates
+the whole relation, pair by pair.
+Remember the fellow in Chapter 1 maintaining four dashboards for one relationship, with
+the unity of the thing living only in his head? Here the unity is in the program. The four
+questions are one object, and the direction you ask it from is just a property of your visit,
+not of the thing itself.
+There is a word for the direction, and I need you to learn it because we will use it on
+every page from here on: the mode. Which argument positions arrive bound, which arrive
+free. (+,-), (-,+), (+,+), (-,-). Four modes of one predicate. The mode is the formal name
+for a question’s direction, and the discovery that it deserves a name at all—that “direction
+of the question” is a thing, with structure, that you can analyze—is worth more than the
+language it came from.
+And the meaning of a program was nailed down with real rigor—van Emden and Kowalski
+showed the logical reading and the computational reading agree [11]—so this was not a
+gadget, it was mathematics. Kowalski put the whole philosophy on a bumper sticker:
+7
+8
+2.2. The first time the database people came around
+(+,-)
+descendants of a given person
+(-,-)
+enumerate the whole relation
+ancestor(X,Y )
+one relation,
+written once
+(+,+)
+decide a given pair
+(-, +)
+ancestors of a given person
+Figure 2.1: The founding gift. One relation, every direction. The mode—which arguments
+arrive known, which are sought—is the formal name for a question’s direction, and it is the
+concept this whole book turns on.
+algorithm = logic + control [9]. Say the logic once. Let the control vary. The mode lives
+entirely on the control side, which is why one logical object can serve every direction of visit.
+2.2 The first time the database people came around
+Naturally somebody noticed that a fact base full of ground clauses looks a lot like a database,
+and by 1978 the logic people and the database people were holding joint workshops [12]. Some
+genuinely important things fell out. Reiter made the closed-world assumption explicit [13]—if
+it’s not derivable, call it false—which at least turned a buried habit into a stated policy you
+could argue with. Clark did the same for negation-as-failure [14]. And the whole line of work
+matured into Datalog and its bottom-up evaluation theory [15, 16], about which much
+more in Chapter 7, where it does something unintentionally hilarious.
+I bring up the history for one reason: the dream of asking a database questions in every
+direction is not a new dream. It is nearly as old as the database. It keeps coming back
+because it keeps being the thing people actually want.
+2.3 The wrong axis
+Even earlier—1969—Cordell Green saw the deepest version of it [55]. A proof, he pointed out,
+is not just a certificate that the answer exists. If you instrument it right, the proof contains
+the answer. Ask “is there an x such that P(x)?”, watch the proof go through, and read the
+winning x out of the bindings. The derivation is not overhead. The derivation is the product.
+Chapter 2. The Language That Went Every Way
+9
+Hold that thought for about two hundred pages, because the proof term in Part Three is
+exactly Green’s dream wearing work clothes.
+Now, the 1980s bet enormous money on this family—whole national programs, the Fifth
+Generation [56]—and it did not work out, and logic programming spent the nineties as the
+field you did not mention at parties. I want to say something about why it failed, because
+everybody knows it failed and almost everybody files it under the wrong reason. The bet
+was that the fix for logic programming’s cost was parallel hardware: keep deciding directions
+at runtime, but decide faster. Wrong axis. The cost was never where they were pushing.
+The cost, as the next chapter will show you with arithmetic, was in when the direction gets
+decided—and while the field was mourning the hardware bet, in 1992, a dissertation quietly
+moved the decision to the other axis [33], and almost nobody read it, and that is the book.
+2.4 What the promise would mean on a lakehouse
+Jump forward fifty years. Put the promise—not the implementation, just the promise—on
+top of a modern lakehouse [43].
+Which customers did rep R close? (+,-). Which rep closed customer C? (-,+). One
+relation, written once. Why is this account flagged? A derivation walked backward—Green’s
+answer-extraction pointed the other way. Which supplier is missing? The mode where the
+sought thing is a row that does not exist yet, which the logicians call abduction [38]. Every
+question the interface in Chapter 1 is currently paraphrasing, the promise answers natively.
+You can even write the lakehouse down as clauses and see it. A fact table is a pile of
+ground facts. A dimension is a function dressed as a relation. A metric definition is a rule. A
+data-quality check is an integrity constraint. The correspondence is so clean it feels like a
+pun, and it is not a pun—it is the same mathematics, and everybody has known it is the
+same mathematics since 1978.
+So why are you not running your warehouse on it?
+2.5 The fine print
+Because of the fine print, which is Chapter 3, and I will not spoil the arithmetic except to
+state the shape of it.
+The promise says: you do not have to name the direction of your question; the machine
+will discover it while running. And the machine’s mechanism for discovering it—unification,
+the logical variable, backtracking search—is a marvel, and it is not free, and the price is paid
+per operation, at runtime, forever, whether or not the direction was obvious the whole time.
+And here is the joke that the next chapter unpacks: the direction almost always was
+obvious the whole time. Your query has the constants sitting right in it. The question knew
+which way it was running before the engine ever started guessing.
+Kowalski’s slogan said logic and control are separate. The promise delivered the logic. The
+control—when do you decide the direction?—stayed stapled to runtime, and at warehouse
+scale that staple costs you somewhere between one and three orders of magnitude, which is
+the difference between a product and a story.
+10
+So now let us go price the marvel honestly. Bring a pencil.
+2.5. The fine print
+Chapter 3
+What the Marvel Costs
+Look at the mechanism, not the magic.
+3.1 The mechanism under the trick
+The last chapter made a promise sound wonderful, and now we are going to do the thing
+you must always do to a wonderful promise: open the box and price the parts. Not sneer at
+it—price it. There is a difference, and the difference is a number.
+The machinery under Prolog’s every-direction trick is unification [7]. Two terms unify
+when there is a way of filling in their variables that makes them identical, and the algorithm
+finds the most general way. That single operation is what lets a question run in any direction:
+the same clause head matches whether you arrive knowing X, knowing Y, knowing both, or
+knowing neither, because the matching does not care which side of the equation the unknowns
+live on. It is a genuinely beautiful piece of mathematics.
+Now watch what it costs. To unify, you walk two term structures, pointer by pointer.
+When you hit a variable you bind it, and because the search might later fail and back up,
+you must write every binding down on a trail so you can undo it. Backing up means choice
+points—saved machine states, stacked up, waiting. And all the terms live on a heap of tagged
+pointers, aliased every which way. Warren organized all of this into an instruction set of
+real genius—the wam [17, 18], and I mean it, a masterpiece—and a masterpiece of exactly
+what? Of deciding the direction of a question while the question is running. Every cell of that
+machine—trail, choice points, tagged heap—is the cost of not knowing, until the moment of
+the call, which way the data flows.
+3.2 The arithmetic, so nobody can wave their hands
+People say “Prolog is slow on big data” and they say it with a shrug, as if it were a constant
+factor, a matter of tuning. It is not a constant factor, and I want to do the arithmetic in the
+open so you can check me.
+A modern columnar engine—the kind under every lakehouse [42]—sustains on the order
+of 109 values per second per core. It gets that by making its unit of work a compressed
+column stripe: one instruction burst decodes, tests, and projects thousands of rows at once,
+in cache, in SIMD lanes, with the prefetcher humming along a predictable stride.
+11
+12
+resolution engine (wam)
+3.3. The retreat: keep the clauses, lose the modes
+lakehouse engine
+unification per call
+(traversal + occurs check)
+trail + choice points
+(undoable bindings)
+backtracking search
+(tuple-at-a-time)
+heap of terms
+(pointers, aliasing)
+category mis
+match:
+every cost on the
+left is per-tuple
+and undo-shaped;
+every strength
+on the right is
+per-column and
+immutable
+columnar scans
+(vectorized, SIMD)
+hash/merge joins
+(set-at-a-time)
+immutable files
+(no undo, only versions)
+distributed shuffle
+(cluster-parallel)
+Figure 3.1: The two machines, side by side. This is not a fair fight and it is not supposed to
+be; it is a category mismatch, and no optimizer recovers a category.
+A resolution step’s unit of work is a pointer chase with paperwork: dereference, tag-test,
+bind, write the trail. Call it tens of nanoseconds per cell when you are lucky—and the trail
+and choice-point traffic are busy wrecking exactly the caches the columnar path lives in [18].
+So put the wam in front of a 1011-row fact base and what do you get? You get tuple-at
+a-time control flow, which means you forfeit SIMD, you forfeit prefetching, and you forfeit
+compression—all three, at once. The honest size of that penalty on modern hardware is
+three to five orders of magnitude. Not percent. Orders of magnitude. That is not “slow.”
+That is a different regime, and no optimizer on earth optimizes you out of a regime.
+So when the field looked at this and gave up—they were not wrong to give up! The
+arithmetic is the arithmetic. They were wrong about what to give up, and the difference is
+the whole book.
+3.3 The retreat: keep the clauses, lose the modes
+What the database people did in the 1980s was a strategic retreat, and as retreats go it was
+executed brilliantly. Keep the clauses, surrender the term structure: that is Datalog—logic
+programming with no function symbols, just constants and variables [15, 16]. The surrender
+buys three treasures. Everything terminates, because the universe of derivable facts is
+finite [11]. Everything runs set-at-a-time, because each derivation round is just relational
+algebra—joins! which is the one thing the database machine is magnificent at. And it
+optimizes: semi-naïve evaluation confines each round to the newly derived delta [15], which
+is a seed we will harvest properly in Chapter 10.
+But look carefully at the casualty report, because there is one line in it that everybody
+reads past. Datalog kept the clauses and lost the modes. Bottom-up evaluation computes
+the entire least fixpoint—every fact derivable from every rule—and then, at the very end,
+filters for what you asked. Ask it ancestor(X,mary) over an enterprise-scale parent table
+and the pure bottom-up engine will cheerfully compute everybody’s ancestors, the complete
+transitive closure of the human race as recorded in your warehouse, and then keep the rows
+mentioning Mary.
+Do you see what happened? The retreat traded away precisely the thing the promise was
+for. The direction of the question—Mary! sitting right there in the query!—no longer steers
+Chapter 3. What the Marvel Costs
+13
+the computation at all. And the eventual repair, in which the industry painstakingly put the
+steering back by hand and called it magic, is Chapter 7, and I have been looking forward to
+telling you that story since page one.
+3.4 The folklore, and the springs under the floor
+Meanwhile the Prolog people, who had kept their modes, knew things they did not write
+into the machine. Every working Prolog programmer knows that a predicate has directions
+it is meant to run—the documentation says so, informally, in comments. The knowledge was
+folklore. The machine paid the runtime price anyway, every call, because folklore is not a
+compiler input.
+And repairs kept springing up, each one a partial confession. Tabling—memoize subgoals,
+so the engine stops re-deriving what it already derived [57, 19]—which, if you squint, is
+demand-driven bottom-up evaluation: exactly the compromise a magic-set rewriting reaches
+from the other side. Constraint logic programming swapped unification for domain solving [21],
+a magnificent line that runs to this day. And Mercury—ah, Mercury. The Mercury people
+said: what if the modes were not folklore? What if you declared them, and the compiler
+generated a separate, fast, deterministic procedure per mode [20]? And it worked, and it
+was fast, and you should remember Mercury when we get to Part Two, because it proves
+the thesis at program scale a few years after the 1992 construction stated it at, so to speak,
+equation scale.
+3.5 The dilemma, on the record
+So here is where the field stood, and I want it stated plainly enough that you could put it on
+an index card.
+You could have the directions, by deciding them at runtime, and the deciding
+costs you three to five orders of magnitude against the columnar substrate—a
+regime, not a factor.
+Or you could have the scale, by evaluating bottom-up, set-at-a-time, and then
+the question’s direction no longer steers anything, and you compute the ancestors
+of the human race to learn about Mary.
+Directions without scale, or scale without directions. Everybody picked scale, and
+who can blame them; scale is where the money is.
+But an index card has two sides, and on the back of this one, in small print, is the
+assumption nobody examined: that the deciding has to happen at runtime. It does not.
+The constants are in the query. The direction is known before the engine starts. The
+whole dilemma rests on paying, at every single call, for a freedom—direction unknown until
+now!—that the question never actually exercises.
+In 1992 somebody removed that assumption [33], and the dilemma does not survive its
+removal. That is Part Two, and we are done with the trouble, and now I get to show you the
+trick.
+14
+3.5. The dilemma, on the record
+Part II
+The Trick
+15
+
+Chapter 4
+You Already Know Which Way It Runs
+The surprise is not the machinery. The
+surprise is where the static input was
+hiding: in plain sight, in the question’s
+own shape.
+4.1 The observation
+Part One ended with a dilemma on an index card: directions or scale, pick one. And I said
+there was fine print on the back—an assumption nobody checked. Here it is, and I am going
+to give it the room it deserves, because the entire rest of the book comes out of this one
+observation, and it is the kind of observation that takes thirty seconds to state and thirty-four
+years to exhaust.
+A logic program is direction-free. Fine. But a query never is.
+Look at one. ancestor(john,Y ). By the time that question reaches any engine anywhere,
+its direction is sitting in its syntax: first argument bound—there’s john, a constant, you can
+see him—second argument sought. No runtime discovery is involved in knowing this. You
+know it. I know it. The parser knows it.
+And what does the classical machine do with this knowledge? It throws it away. The
+wam re-discovers, at every single unification, at every call, millions of times a second, what
+was visible in the query’s shape before the engine started—and it pays the trail, the choice
+points, the tagged heap, the whole apparatus of Chapter 3, for the privilege of postponing
+what it already knew [17].
+So stop postponing. That is the whole trick. Make the mode part of the compilation
+problem. Because look what happens when you do: a predicate under a fixed mode is not a
+search problem anymore. It is a function—from its bound positions to sets of values for its
+sought ones. And functions are the one thing compilers, and columnar engines, and for that
+matter fifty years of computer science, know exactly how to run fast.
+Definition 4.1 (Mode, moded predicate, mode family). A mode for an n-ary predicate p
+is an assignment m ∈ {+,−}n of each argument position to given or sought. The moded
+predicate pm is the function from bindings of the + positions to the set of tuples over the −
+positions consistent with p’s definition. A predicate’s mode family is the collection {pm}
+over the modes its uses actually require; the logic is written once, and the family is derived
+from it.
+17
+18
+4.2. Two witnesses that this works
+Notice what the definition does to Kowalski’s slogan. Algorithm = logic + control [9] was
+a beautiful separation with one loose end: it never said when control gets decided, and by
+default it got decided at runtime, per call, forever. The definition moves it to compile time,
+per mode, once. Same logic. Same directions. Different bill.
+Now—is the query’s mode really always sitting there in the syntax? Honest answer:
+nearly always, and when it is not, you can find it. The constants in a query bind positions
+directly. From there, groundness propagates: if a subgoal’s inputs are bound by the time
+control reaches it, its outputs are bound after it succeeds, and you can push this left to right
+through a clause body like water finding its level. This is a standard abstract-interpretation
+exercise [20, 58, 59], and Chapter 10 runs it on real queries. The rare genuinely-dynamic
+case—direction unknown until runtime—gets a dispatch on the mode family, which costs one
+branch. One branch! Against the wam’s per-unification toll. That is the exchange rate.
+4.2 Two witnesses that this works
+Whenever somebody shows you a trick this simple you should ask: if it’s so good, who else
+uses it? Fair question. Two witnesses, both under oath.
+Witness one: every database you have ever used. What does a query optimizer
+do with a join? [3] It picks a direction. An access path—probe this index with these bound
+keys, scan that side, build the hash on the smaller input—is a mode decision. The optimizer
+takes a declarative, direction-free statement and, before execution, commits to which values
+flow where. The industry has been compiling modes since 1979. It just never had the word
+for what it was doing, and—this is the limitation that matters—it only ever does it for one
+direction at a time, per query, with no idea that the four queries you wrote this week are one
+relation. The mode family is the missing organizing object.
+Witness two: Mercury. In the mid-nineties a group in Melbourne built a logic language
+where modes are declared, and the compiler generates a separate specialized procedure per
+mode [20]—each one deterministic where it can be, each one free of the logical-variable
+machinery where the mode allows, which is nearly everywhere. Result: logic programs at
+the speed of functional ones. Mercury is the existence proof at the scale of a programming
+language.
+The 1992 construction [33], which Chapter 5 unpacks, is the same thesis at the scale of
+the underlying equations—and it came first, and it is the version that tells you what the
+compiled thing is made of, which is what you need if the target is not a language runtime
+but a lakehouse.
+4.3 Determinism rides along
+One more piece, and it comes free, which should make you suspicious, so let me show you
+why it is legitimate.
+Fix a mode and suddenly you can ask a question that direction-free logic cannot even
+phrase: for given inputs, how many outputs? Zero-or-one? Exactly one? Zero-or-more? This
+is the determinism of the moded predicate, and Mercury showed it is inferable right alongside
+Chapter 4. You Already Know Which Way It Runs
+19
+the mode [20]. Why do you care? Because determinism is where the last of the search dies.
+A deterministic moded call is just a function call—no choice points, nothing to undo, nothing
+on the trail, ever. And on the lakehouse side, determinism is exactly what distinguishes a key
+lookup from a scan, which the optimizer needed to know anyway. The mode tells you which
+way the water flows; the determinism tells you how much water. Compile time knows both.
+4.4 An old friend with a new haircut
+If you have spent any time around compilers, something has been itching at you for two
+pages: this is partial evaluation. You are right, and the itch is the correct response, so let us
+scratch it properly, because knowing a trick’s family tells you what it can lift.
+Specializing a general program to a known part of its input is one of the oldest ideas in
+the field, old enough to have theory named after it: the Futamura projections [24], which
+observe that specializing an interpreter to a program yields a compiled program—compilation
+is specialization. Now say ours in that vocabulary: specializing a direction-free predicate to a
+known mode yields a directed function. The mode is static input. The unification machinery
+is interpretive overhead that the specialization removes. The moded predicate is the residual
+program [25].
+This matters for confidence. We are not inventing an exotic optimization and hoping. We
+are applying the most battle-tested transformation in the compiler literature to an input—the
+mode—that the field simply never noticed was static. The surprise is not the machinery. The
+surprise is where the static input was hiding: in plain sight, in the question’s own shape.
+4.5 First sight of the lakehouse
+Let me cash one small check now, so Part Three is not a leap.
+Take the four-dashboard fellow from Chapter 1. His relation, written once as a rule over
+fact tables. His four questions: four modes of it. What does each compile to, on the columnar
+substrate?
+• (+,-), rep to customers: a probe of the fact table keyed on rep—an index lookup, then
+a tight scan.
+• (-,+), customer to rep: a probe keyed the other way, which may want a different physical
+layout—and now the mode family is telling the storage layer something, namely which
+sort orders and partitions to maintain.
+• (+,+): an existence check—a semi-join, cheapest of all.
+• (-,-): the full enumeration, an honest scan, and the only mode that deserves one.
+Four questions. One relation. Four little compiled plans, each the shape of its own
+direction, none paying a nickel for the freedom to run the other way. The unity lives in the
+program, where it belongs, and the machine runs functions, which it loves.
+20
+4.5. First sight of the lakehouse
+That is the doctrine. What is missing is the mechanism—the actual construction that
+takes the recursive clauses and produces those functions, with the two currents inside, values
+flowing up and demand flowing down. That construction has a name, lrec, and a birthday,
+1992, and it is the next chapter, and it is the best chapter, because it is the one where the
+trick turns out to have a soul.
+Chapter 5
+The Trick Itself: lrec
+The backward line is not a pathology. It
+is the other half of the object.
+5.1 Where the easy story runs out
+The last chapter probably felt too easy, and your suspicion is correct, so let us locate the
+hard part honestly.
+For a plain fact table, “mode as compilation” is barely a trick at all: bound columns
+become probe keys, sought columns become output, you pick an access path, done—the
+optimizer has been doing it since 1979. The hard part is recursion. ancestor calls ancestor.
+And now the direction of the question has to thread itself through an unbounded tower of
+self-reference: the binding at the top has to steer sub-calls arbitrarily deep, and the answers
+assembling at the bottom have to climb all the way back out. What, exactly, does a recursive
+predicate compile to, under a fixed mode, such that no unification survives?
+That question has a precise answer. It was given in 1992, in a dissertation about translating
+logic programs into functional languages [33], and the answer has three moves. I am going to
+show you all three, small, slowly, because this is the heart of the book and I refuse to wave
+my hands at the heart of the book.
+5.2 Move one: demote the unknown
+The first move is so small you might miss why it is a move at all.
+Prolog’s whole cost stack, remember, comes from the logical variable—unknownness
+as a first-class runtime citizen, aliasable, liable to turn up anywhere in any term, needing a
+trail to undo it. The dissertation says: we will represent “not determined, not demanded” by
+adjoining to each semantic domain one extra value. One. A single distinguished point, and
+no more.
+Why is that a big deal? Because of what it does to the machinery. Unknownness as a
+variable must be negotiated: unified, aliased, trailed, undone. Unknownness as a domain
+element is just another case in a case-split—pattern-matchable, therefore compilable; a single
+point, therefore never aliased with anything; a boundary marker instead of a mechanism.
+Everything the wam negotiates at runtime, the compiled program will settle with a match—
+and case analysis over a small known alternative is exactly what functional compilers and
+21
+22
+5.3. Move two: one recursion, two currents
+inherited:
+demand, bindings,
+region of relevance
+(the question,
+descending)
+q11
+q
+q1 q2
+q12
+synthesized:
+values, answers,
+derivations
+(the data,
+ascending)
+q21
+q22
+one lrec definition; two derived equation families;
+each node takes its inherited attributes from above
+and gives its synthesized ones up
+Figure 5.1: The heart of the book, drawn once. Two currents in one wire: the question
+descends the recursion on the left of every edge, the answers ascend on the right. Neither
+current is an afterthought bolted to the other. They are one object, written once, split by
+the solution discipline [33, 26].
+columnar engines both execute at full throttle.
+There is a general lesson here about where you let complexity live. Prolog lets the
+unknown roam the heap. The 1992 construction confines it to one point of the domain and,
+having confined it, never pays for it again. When you cannot get rid of a complication, shrink
+its habitat.
+5.3 Move two: one recursion, two currents
+Move two supplies the recursion form, and it is the one to remember.
+The dissertation introduces a construct called lrec. You write your recursive definition
+once, as one syntactic object. But an lrec’s solution—its meaning—is not a single recursive
+function. It is a pair of mutually recursive equation families, in the style Knuth invented for
+attribute grammars [26]:
+• Asynthesized family, computing upward—from parts to wholes, from sub-calls to
+results. The data, ascending.
+• Aninherited family, computing downward—from context to parts, from the question’s
+bindings to each recursive site’s obligations. The question, descending.
+Look at Figure 5.1 for a minute. Blue going down: the question. Orange coming up: the
+data. Two currents in one wire—and the wire was written once. Each is a perfectly ordinary,
+total, pattern-matching functional program over domains carrying move one’s adjoined value.
+Now, if you know a little physics, something should be nagging at you, and I am going
+to say it out loud because it is not a decoration, it is the same mathematics of pairing.
+When Feynman drew his diagrams, the scandal in them was the line that runs backward in
+time—and the resolution of the scandal was that the backward line is not a pathology to be
+Chapter 5. The Trick Itself: lrec
+23
+erased but the other half of the object: a positron is an electron on the return leg [74, 77].
+The forward and backward legs are one thing, and physics got simpler, not weirder, when it
+stopped treating the backward leg as an embarrassment.
+Same move here. Fifty years of data engineering treated the backward current—the
+question descending—as an embarrassment: something to bolt on afterward as provenance,
+or simulate by hand as a magic rewriting, or paraphrase with a language model. The lrec
+construction says the backward current is the inherited half of the recursion itself. Not bolted
+on. Born there.
+5.4 Move three: the continuations come out, not in
+The third move is the one this whole corpus keeps meeting in different costumes, and here is
+where it was born.
+Take the paired equations and apply the CPS transform—the standard translation that
+turns “the rest of the computation” into an explicit function you pass around [28, 29, 30].
+What falls out is a program organized around paired continuations: a success continuation
+carrying the synthesized current onward, and a demand-side continuation carrying the
+inherited current inward.
+And now pay attention to the order in which that happened, because the order is the
+deepest lesson in the dissertation. The continuations were derived, not premised. Nobody
+started from a continuation-passing runtime and tried to tame it. The starting point was
+the bidirectional equations—the primary semantic object—and the continuations appeared
+as their CPS image, inheriting the equations’ totality and their compiled, pattern-matching
+character, the way a shadow inherits the shape of the thing that casts it.
+If you like the monadic dress: the construction lands where the first author’s school was
+mapping that same year [31, 32]—the continuation monad KX = (X → R) → R carrying
+the forward delivery, and, prophetically, the selection monad SX = (X → R) → X [34]
+carrying the shape of demand-directed choice. The later rediscoveries—Curien and Herbelin’s
+duality of computation [35], the subtractive and coexponential logics [36, 79], reverse-mode
+differentiation as “lambda the ultimate backpropagator” [37]—are the same pairing in
+symmetric-calculus, categorical, and numerical dress. The 1992 member of the family is
+the compilation-theoretic one, and—the point of this entire volume—the only member born
+already speaking the language of queries over relations.
+Theorem 5.1 (The lrec compilation, informally). A Horn-defined recursive predicate p,
+under a mode m with the usual groundness discipline, compiles via the single-adjoined-value
+translation and lrec into a pair of total, first-order, pattern-matching functional equation
+families—inherited: demand; synthesized: answers—whose lazy evaluation computes pm
+touching only demanded sub-problems; and the CPS transform of this pair yields the paired
+continuation implementation, correct by derivation. No unification, logical variables,
+trail, or choice points occur at runtime.
+Read the last sentence of the theorem again. That is the entire cost stack of Chapter 3—
+gone. Not optimized. Absent. The freedom that generated it was spent at compile time,
+24
+5.5. The neighboring miracle
+where it was cheap, because that is when we knew the direction, because we always knew the
+direction.
+5.5 The neighboring miracle
+One relative deserves a wave, because it makes the mechanism feel inevitable rather than
+clever.
+In lazy functional languages there is an old marvel called the circular program [60, 27]: a
+program that computes, in one pass, a value that seems to need two—replace every leaf of a
+tree by the tree’s minimum, say—by defining the output in terms of a value that the same
+traversal is still producing. It works because laziness lets the two informational currents, one
+down, one up, share a single traversal, each consuming the other’s output at the moment it
+is ready.
+That is lrec’s evaluation discipline in the wild. The inherited current and the synthesized
+current interleave by need, and laziness is the scheduler [64]. The 1992 construction did not
+have to invent its runtime; the functional world had already built it, for its own reasons,
+which is the kind of coincidence that tells you that you are cutting along a real joint.
+5.6 The whole thing, worked small
+Abstraction earns trust by surviving a small example, so let us run the two-clause ancestry
+program through all three moves in mode (-,+): ancestor(X,mary). Ancestors of Mary—the
+exact query that bankrupts naïve bottom-up evaluation, which computes everyone’s ancestors
+and filters (Chapter 7), and taxes top-down, which unifies its way there.
+Mode analysis adorns the program. The head’s second position is bound. Push
+groundness through the recursive clause
+ancestor(X,Y ) :- parent(X,Z), ancestor(Z,Y ) :
+Y is bound in the recursive call too—the recursion preserves the mode (-,+) all the way
+down—and parent(X,Z) runs against the child column. Already the analysis has said, once,
+at compile time, what the wam would discover per-call forever: the second argument is data
+all the way down.
+The lrec solution splits the recursion into its currents. The inherited family,
+seeded by the root’s binding:
+dem0 = {mary},
+demk+1 = πparent-of parent ⋉ demk .
+Each level’s demand is the set of people whose parents the next level must consider. Look
+at the operations: a semi-join and a projection. Nothing else. The question, descending, is
+made of the two cheapest operations the columnar engine owns.
+The synthesized family ascends over exactly the lit region:
+ansk = parent ⋉ demk ∪ parent ▷◁ ansk+1 .
+Chapter 5. The Trick Itself: lrec
+25
+Direct parents of demanded people, unioned with the join through them. The data, ascending,
+touches only what the demand lit.
+Under lazy evaluation the two interleave by need [27]; under the fixpoint kernels of
+Chapter 10 they run as semi-naïve deltas [15]. And if you have read the magic-sets literature,
+look at dem again, because you have seen it before: it is precisely the magic predicate that
+the 1986 rewriting constructs by hand [22]. Here it fell out of one lrec declaration as the
+inherited half. Derived, not designed. Hold that; it is the punchline of Chapter 7.
+The CPS image, last: transform the pair and the inherited current becomes the
+continuation each level passes inward—“here is who to ask about next”—and the synthesized
+current the results flowing back. The paired continuations of the dissertation, falling out of
+equations a page long.
+5.7 What the hinge holds
+Let me stand back and tell you plainly what was just built, because it goes by fast.
+We took the multidirectional promise of 1972, whose price was a runtime that decides
+directions per call. We observed the direction was static. We compiled it: unknownness
+demoted to a domain point, recursion split into a demand current and an answer current, the
+continuations derived as an image rather than assumed as a foundation. What remains at
+runtime is pattern matching, semi-joins, projections, unions—the native vocabulary of the
+fastest data machinery on earth—arranged so that the question steers and the data answers
+and neither pays for the other.
+Thirty-four years later, the machine this construction specifies is the one Part Three builds
+on a lakehouse. But first there are two more stops in Part Two. One is about demand—the
+inherited current deserves its own chapter, because the inherited current is where all the
+money is. The other is about what happened when an entire industry, not knowing this
+construction existed, groped its way to the demand half with its bare hands, and—finding it
+inexplicable—named it magic.
+26
+5.7. What the hinge holds
+Chapter 6
+Demand: The Current With the Money
+In It
+The directed question costs its own size;
+the universe’s size is somebody else’s
+problem.
+6.1 Why this current gets its own chapter
+The last chapter split the question into two currents and treated them evenhandedly, the
+way you introduce twins. Now I have to play favorites, because at lakehouse scale the two
+are not economic equals. The synthesized current—answers ascending—costs whatever the
+answer costs, and the answer costs what it costs; there is no negotiating with the size of the
+truth. All the negotiable money is in the other one. The inherited current decides how much
+of the world you touch on the way to the answer, and at 1011 rows, “how much of the world”
+is the whole bill.
+Let me put the claim in one sentence and then spend the chapter earning it: the demand
+current is the difference between a query that costs the size of its answer and a query that
+costs the size of the universe.
+6.2 The lazy lineage
+First, the demand current has a distinguished family, and knowing the family tells you it is
+trustworthy machinery and not a gadget.
+Call-by-need—lazy evaluation—is the discipline where nothing is computed until something
+downstream demands it, and then at most once [27, 61, 62]. A lazy program is, operationally,
+a demand current running backward through the code while values run forward. The
+functional-language people built entire industrial compilers on this [64], and they learned the
+deep lesson, which I want you to hold onto: demand is not a mood, it is a computable object.
+Strictness analysis [63] is literally a compiler pass that computes, statically, where demand
+will certainly flow—which is our mode analysis wearing a different hat. Same current, same
+mathematics, different building.
+So when the lrec construction says the inherited half of a recursion is a first-class
+equation family, it is not speculating; it is importing forty years of settled practice about
+27
+28
+6.3. The arithmetic of relevance
+the demand cone lights a region
+proportional to the answer
+fact base:
+O(1011) rows
+everything unlit is never
+decompressed, never scanned
+the question, descending
+Figure 6.1: The whole economy of the book in one picture. The question descends as a
+predicate and lights the region it can possibly need. The directed question costs its own size;
+the universe’s size is somebody else’s problem.
+what demand is and how to schedule it.
+6.3 The arithmetic of relevance
+Now the money. On columnar storage the demand current has a concrete physical meaning,
+and I want to do the arithmetic where you can see it, because the arithmetic is the argument
+(Figure 6.1).
+An inherited attribute arriving at a recursive site is, operationally, a predicate over the
+base relations: the set of keys, or ranges, or patterns that this sub-question can possibly
+care about. Push that predicate into the storage layer and look what it becomes: partition
+elimination. File skipping via zone maps. Clustered and indexed lookups. Semi-join reduction
+shipped across the cluster [42, 43]. Every one of those is machinery the lakehouse already
+owns and already optimizes, because the vendors have spent two decades making “touch less
+data” fast.
+Do you see what that means? The inherited current does not need new physics. It needs
+only to reach the existing physics. And neither classical engine could hand it over: the
+top-down engine had contentful demand but kept it locked in control flow, one tuple at a
+time, invisible to any scan planner; the bottom-up engine had beautiful set-at-a-time algebra
+and no demand at all. The compiled pair hands it over wholesale, because in the compiled
+pair, demand is data. Data can be shipped. And a shipped demand set is a semi-join that
+the engine executes at scan speed.
+Run the numbers on the ancestry query. dem0 is one person. Each level’s demand is
+the parents of the previous level’s—a set that grows like the answer grows, generations of
+one family. Against a parent table of 109 rows, the demanded region after k levels is a
+few thousand keys. The undirected fixpoint computes the closure of the species. The ratio
+between those two numbers is not an optimization; it is the difference between a product and
+a joke, and all of it is carried by the inherited current.
+Chapter 6. Demand: The Current With the Money In It
+29
+Volcano pull:
+“one more tuple”
+promote
+pacing signal
+composes operators
+inherited current:
+“these keys, this range”
+predicate = data
+prunes fact bases
+same idea, two information contents:
+anonymous volume composes; contentful demand prunes
+Figure 6.2: Volcano’s confession. The industry already pulls; it just pulls without saying
+what it wants. Give the pull content and the pacing signal becomes the question’s shape.
+6.4 Volcano’s confession
+Now, here is my favorite piece of evidence, because it comes from the defendant. The database
+engine has been running a demand-driven fragment all along, and it confessed in writing.
+The Volcano model [65]—the iterator protocol, open/next/close, which structured a
+whole generation of executors—is pull evaluation. The consumer demands a tuple; the demand
+propagates down the operator tree; production is paced by consumption. Every pipelined
+plan in every engine you have ever used is call-by-need over operators. The industry’s own
+execution architecture is an admission that demand-driven computation is the right shape
+for queries.
+But look at the content of Volcano’s demand, because that is where the limit is (Figure 6.2).
+Volcano’s pull says one thing: “one more tuple.” It is anonymous volume—a pacing signal
+with no information in it. That is why it composes operators beautifully and prunes fact
+bases not at all. The demand that saves you orders of magnitude is contentful: which keys,
+which region, which sub-question. And contentful demand is exactly what the inherited
+current carries, and exactly what no iterator protocol can say.
+So the engine of this book, seen from the executor’s chair, is not a foreign invader. It is
+Volcano’s own idea, promoted: the pull becomes a predicate, the pacing becomes pruning,
+and the operator tree’s polite little requests become the question’s actual shape, descending.
+6.5 Demand under optimization
+A practical worry, and its answer, because a practical reader has already thought of it. Doesn’t
+the optimizer move things? Reorder joins, push filters, rewrite plans—will the demand current
+survive contact with a real planner?
+It survives because of what it is. The inherited equations are relational-algebra expressions—
+semi-joins and projections over ordinary relations. They are not annotations riding on the
+plan; they are part of the plan, made of the same algebra as everything else, and the optimizer
+is free to do to them what it does to all algebra: reorder, push, merge, choose physical
+operators. Magic-set practice settled the precedent decades ago—rewritten programs are
+optimized like any other Datalog [23, 16]—and the incremental engines showed demand
+shaped relations flowing through full differential pipelines [39]. The current is robust precisely
+30
+6.6. What demand cannot know
+because it is boring: it is relations. The engine has never met anything else.
+6.6 What demand cannot know
+And now the chapter’s honest ending, which is a boundary, and the boundary is a door.
+The inherited current is mighty but it is not clairvoyant. It prunes what the question
+cannot need. It cannot conjure what the store does not hold. Descend with your demand set,
+arrive at the base relations, and find—nothing. The demanded region is empty. The store
+has no fact where the question needs one.
+The classical engines shrug here. Empty result. And Chapter 1 already told you what
+that shrug costs: the difference between false and never checked, erased at the exact moment
+it matters most.
+But look at what the compiled question is holding at that moment. It knows the demand—
+precisely which keys, which region, came up empty. The unmet demand is not a failure
+report; it is a shopping list. A specification of exactly the evidence that would let the answer
+proceed. What a system does with that shopping list—whether it drops it on the floor like
+every engine before it, or prices it and takes it to the world—is the difference between Part
+Two and Part Three. Hold the thought through one more chapter, because first I owe you a
+comedy: the story of the industry discovering the inherited current by hand, in the dark, and
+naming it after a thing you do with a wand.
+Chapter 7
+The Industry Discovers Half of It, and
+Calls It Magic
+Any sufficiently advanced technology is
+indistinguishable from magic—the quote
+is about the observer.
+7.1 The hole the retreat dug
+I promised you a comedy and here it is, though like all the good ones it is a comedy of smart
+people doing their best.
+Recall where the Datalog retreat left the field (Chapter 3): clauses kept, modes lost,
+and bottom-up evaluation computing the entire least fixpoint no matter what you asked. By
+the mid-eighties this was intolerable in exactly the way you would predict. Recursive queries
+were the whole selling point of deductive databases, and the flagship demo—ask for Mary’s
+ancestors—computed the ancestry of the human race and then filtered. Something had to
+give the question’s bindings a way to steer the fixpoint.
+So in 1986 some of the best people in the field produced a program transformation that
+did it [22], and the tradition that grew from it [23, 16] carried it into real systems, where it
+lives to this day.
+They called it magic sets. Hold the name in your mind. We will come back to the name.
+7.2 Watch the rewriting work
+The mechanics deserve care, because the mechanics are the punchline. Given a program and
+a query with some arguments bound, the rewriting does three things.
+First, adornment. Every predicate occurrence gets annotated with a binding pattern—b
+for bound, f for free—derived by pushing the query’s bindings through each rule, left to
+right. Now, you have seen this before. You saw it in Chapter 4. The adorned program is
+mode analysis, written in a different alphabet: ancestorfb is ancestor in mode (-,+). Same
+propagation, same result, different notation.
+Second, the magic predicates. For each adorned recursive predicate, the rewriting
+invents a new predicate—the “magic” set—defined to compute the set of bound-argument
+values for which the original will actually be asked. It is seeded by the query’s constants and
+31
+32
+7.2. Watch the rewriting work
+magic sets (1986–)
+Adornment
+binding patterns b/f pushed
+through rules
+Magic predicates
+demand as extra IDB relations,
+seeded by query constants
+Guarding
+fixpoint over demanded region
+lrec construction (1992)
+≡ Mo
+de analysis
+{+,−} per position (Def. 4.1)
+Inherited equations
+≡
+≡
+demand as a derived program
+(demk)
+Synthesized equations
+answers over the lit region
+(ansk)
+row by row, the same machine. The left column is the right column,
+hand-built inside Datalog, out of the only material Datalog has—more relations.
+Figure 7.1: The correspondence. Magic sets are the bidirectional pair, hand-compiled. What
+the general form adds: terms, functions, the derived continuations, and—decisively—a
+semantic object whose solutions are pairs by construction rather than by rewriting.
+propagated through the rules’ call structure by what the literature calls sideways information
+passing [23].
+Stop. Look at that. A relation whose contents are “the values this question will actually
+ask about,” seeded at the query and flowing down through the call structure. That is the
+inherited current. That is the demand set of Chapter 6, the demk equations of Chapter 5,
+reified as extra database relations—because relations are the only building material Datalog
+has.
+Third, guarding. Each original rule is rewritten to fire only for bindings the magic set
+has certified as asked-for. The guarded rules, run through the ordinary semi-naïve fixpoint [15],
+now compute only the demanded neighborhood. Mary’s ancestry. Not the world’s.
+And the guarded evaluation over the lit region—that is the synthesized current, semi-join
+reduced by demand. The correspondence is line-by-line, and Figure 7.1 draws it so you can
+check every row.
+So here is the situation, plainly. In 1986 the database community, working from the
+bottom-up side, with no lrec and no attribute grammars in hand, groped its way to the
+inherited current and installed it by hand, as a program transformation, inside the only
+formalism it had. In 1992 the general construction was published, from the compilation side,
+in which the same current is not installed but derived—the inherited half of one recursion
+form, with the synthesized half attached by construction and the correctness falling out of
+the derivation instead of being proven about a rewriting after the fact.
+They found half the object. The demand half. By hand. In the dark. It works—it
+genuinely works, it is in production systems right now—and it is a heroic piece of engineering.
+And they called it magic.
+Chapter 7. The Industry Discovers Half of It, and Calls It Magic
+33
+7.3 On the name, briefly, because it matters
+I promised we would come back to the name, and I am not doing it to score a point off
+better engineers than me. The name is a finding. Communities name things by how the
+things feel from where the community stands, and from where the Datalog community
+stood—no modes, no inherited attributes, no pairing discipline—a set of auxiliary relations
+that mysteriously makes recursive queries fast does feel like magic. The name records,
+honestly, the absence of the theory in which the trick is obvious.
+There is an old rule that any sufficiently advanced technology is indistinguishable from
+magic, and everyone quotes it as if it were about the technology. It is about the observer.
+The magic-set rewriting is indistinguishable from magic precisely when you do not have
+the semantics in which it is a corollary. Hand a magician’s trick to the fellow who knows
+the mechanism and the magic evaporates and what remains is better than magic: it is
+understanding, which generalizes, which the trick never does.
+And that is not rhetoric—the generalization gap is concrete. Datalog’s magic works
+on Datalog: no function symbols, no terms, and the pairing exists only as the residue
+of a rewriting. The lrec form keeps the full term language, derives the continuations
+(Chapter 5), and—as Part Three needs—extends to demand over verdicts, proof terms, and
+priced evidence, none of which the 1986 rewriting can express, because the rewriting only
+ever knew about one kind of demand: keys.
+7.4 The twin from the other side, and the mature tra
+dition
+For completeness, the operational twin: tabling, from the top-down world [57, 19]—memoize
+subgoals, share their answers, terminate on repeats. Tabling is demand-driven bottom-up
+arrived at from above, as magic is arrived at from below; the two meet in the middle at
+exactly the compromise the lrec pair occupies by construction. When two independent
+traditions, tunneling from opposite ends, meet at the same point underground, you may take
+it as evidence the point was really there.
+And let me be fair to the tradition’s maturity: sideways-information-passing strategies
+were refined into templates [66], the rewritten programs proved optimizable like any other
+Datalog [16], and the modern Datalog renaissance runs on these techniques in anger [40,
+41]. Nothing in this chapter says the hand-built half does not work. It says the hand-built
+half is half, and that the whole was available, with a derivation instead of a rewriting, from
+1992 on—published into a field that had stopped reading logic-programming dissertations at
+almost exactly that moment, for reasons Chapter 2 recorded. Timing is most of comedy.
+7.5 Where the special case stops
+So Part Two closes with the ledger balanced. The trick: modes at compile time. The
+mechanism: one recursion, two derived currents, no runtime unification, the continuations
+falling out as an image. The industry’s independent evidence: it built the demand half itself,
+34
+7.5. Where the special case stops
+which means the demand half is the part whose value is beyond argument, and it built it
+inside the fixpoint engine, which means the substrate is ready.
+What the special case cannot do—what no amount of magic over keys can do—is answer
+for a store that holds claims instead of just facts; walk a derivation backward as an object;
+refuse an extrapolation because the warrant beneath it does not cover the regime; or take an
+empty demanded region and turn it into a priced plan for going to the world. For that you
+need the general construction, pointed at a different kind of fact base.
+That fact base is called the countersigned catalog, and building the engine on top of it is
+Part Three, which is where everything we have assembled starts earning money.
+Part III
+The Machine
+35
+
+Chapter 8
+A Fact Base That Doesn’t Fool Itself
+The unit in the store is not the claim;
+it is the claim with its warrant.
+8.1 The machine needs the right fuel
+Part Three, at last, is where we build the thing. And the first component is not the engine—it
+is the fuel, because the engine of Parts One and Two, pointed at an ordinary fact base, would
+faithfully compile questions over data that cannot tell you how it knows anything. Fast
+nonsense is still nonsense. You would have a magnificent turbine burning swamp gas.
+The previous volume of this corpus built the right fuel at book length [78], and here I will
+give you the short version, in this book’s vocabulary, because Part Three’s engine runs on it.
+The idea is this. The unit in the store is not the claim; it is the claim with its warrant. A
+row that says “discount drives renewal, effect 4–7%, in scope: enterprise tier, North America,
+2024–2025” is not stored as a bare edge but as a typed fact: the assertion, the interval,
+the scope it was established in, and a handle to the verdict—the record of who checked it,
+against what evidence, and how. The store keeps the derivation. Green’s dream (Chapter 2):
+the proof is the product. So the catalog is a fact base whose facts are claims, and whose
+distinguished feature is that every claim carries its epistemic paperwork, machine-readable,
+at the row level.
+If you want the AI family tree: this is the truth-maintenance idea [70, 71]—keep the
+justifications, propagate retractions through them—grown up, moved out of the LISP machine,
+and given a job in the enterprise, where retraction is not a lab exercise but a Tuesday: an
+upstream table restated, a model deprecated, a regime change in the market. When a warrant
+dies, the ledger knows exactly which conclusions were standing on it. That is not a luxury.
+That is the difference between a knowledge base and a rumor mill with indexes.
+8.2 Four answers to one lookup
+Here is where the fuel meets the engine, and it is my favorite small thing in the whole design,
+because you can see an institution’s entire honesty in the return type of one lookup.
+Ask the catalog for the discount–renewal edge. One moded lookup. Classical semantics
+offers two possible outcomes: the row is there, or it is not. The catalog returns four, and
+each is a different situation in the life of the institution:
+37
+38
+8.3. The physical layer is already there
+Countersigned, current. The claim comes back with its interval, its scope, and its
+proof-term handle. Build on it. Cite it. This is the good case, and note that it comes
+back with papers.
+Refuted. The claim comes back marked false—with its own warrant. Somebody checked,
+and it failed, and here is the check. This is an answer with equal standing to the first,
+not an absence, and downstream it does not merely fail-to-support: it hard-blocks. You
+cannot build on what the institution knows to be false, and now the machine knows
+that it knows.
+Stale. The claim comes back dimmed: it was countersigned, and then something it
+depended on moved—there is the ledger entry that staled it, there is its place in the
+re-verification queue. Consequence computation may proceed, dimming propagated;
+licensing of actions may not. Knowledge with a freshness date, which is the only kind
+there is.
+Unsigned. Nobody has ever established this, and the lookup says so—not with an empty
+result, but with an object: the open goal, docketed, priceable.
+Now set that against what sql gives you (Chapter 1): present or absent, with refuted
+and never-checked collapsed into the same mute emptiness by the closed-world decree [13].
+The collapse is exactly where an institution fools itself—where “we found nothing” quietly
+becomes “there is nothing”—and you remember the first principle about fooling yourself, and
+who the easiest person to fool is. The four-valued lookup is that principle, implemented as a
+return type.
+8.3 The physical layer is already there
+And where does this catalog live? On the lakehouse you already own—and this is not a
+compromise, it is a fit. The lakehouse’s native talents [43, 42] are, item by item, what a
+proof-carrying fact base needs: immutable files and versioned tables (a verdict, once recorded,
+is an append, and history is queryable time travel); transaction logs (the ledger is, literally,
+a log); schema enforcement (the typed facts get real types); and cheap wide storage (proof
+terms are bulky, and nobody cares, because storage is the one thing that got free).
+The claims sit in columnar tables. The verdicts sit beside them as typed rows with
+evidence handles into the same storage. The dependency graph—which claim’s warrant leans
+on which—is an ordinary adjacency relation, which is to say: a fact table like any other,
+traversable by the recursive machinery of Part Two.
+Do you see the shape now? Claims are facts. Verdict status is a column. Dependencies
+are a relation. Scope is a predicate. Every epistemic notion in the previous volume compiled
+down to things the engine of Part Two already handles—and so the question machinery, the
+modes, the two currents, the demand cones, all of it applies without modification to the
+institution’s knowledge itself.
+Which sets up the next chapter’s move: take the four modes of one relation—the compass
+from Chapter 2—and point them not at parent and ancestor but at what the company knows.
+Chapter 8. A Fact Base That Doesn’t Fool Itself
+39
+That is where the engine stops being a database technique and starts being an epistemology
+with a throttle.
+40
+8.3. The physical layer is already there
+Chapter 9
+One Relation, Four Questions
+The mode is the question’s grammar;
+the compilation is Part Two’s; the fuel
+is Chapter 8’s.
+9.1 The compass
+Now watch what happens when the mode discipline of Part Two meets the catalog of the last
+chapter. This is the shortest big idea in the book.
+Everything an institution knows can be read as one relation: holds(C,W)—claim C is held
+under warrant W. And every question an institution ever asks about its own knowledge is a
+binding pattern of that one relation. A mode. So the whole zoo of “analytics,” “explanation,”
+“what-if,” and “research planning”—four departments, four tools, four budgets—collapses
+into the mode compass of Figure 9.1: four directions of one relation, each compiling by Part
+Two’s machinery into its own little program with its own cost. Look at the compass for a
+moment before we walk it, and notice the bottom point especially, because the bottom point
+is a mode no query language has ever shipped: the one whose answers may require the world.
+One refinement before the walk. Over a catalog, a binding pattern needs a fifth symbol
+beyond + and −: the authority of the answer—does the question demand countersigned
+support, or will dimmed (stale) support do, and is refuted material to be routed around or
+surfaced? Call it the authority annotation; it rides along with the mode the way determinism
+rode along in Chapter 4, is checked the same way, at compile time, and costs the same:
+nothing at runtime.
+9.2 North: forward, consequence in scope
+The forward mode is the familiar direction—given what we know, what follows?—but run
+over typed claims it acquires manners it never had over bare rows. Consequences propagate
+with their scopes intersected and their authority combined: build on a stale edge and the
+conclusion arrives dimmed; the dimming is not a footnote, it is in the type. Build on a
+refuted edge and the derivation does not proceed at all—the hard block of Chapter 8. The
+demand cone works exactly as in Chapter 6: the question lights the region of the catalog
+it can touch, and the lakehouse prunes to the cone. Forward, over the catalog, is ordinary
+analytics that has stopped being credulous.
+41
+42
+9.3. East: backward, why as a traversal
+given claims, what follows?
+consequence, in scope, typed
+forward
+(+,-)
+given do(X=x), what changes?
+gated by identification
+counter
+factual
+catalog
+claims ×
+warrants
+abductive
+(-,-) open
+given a goal, what is missing?
+the mode that exits the database
+backward
+(-, +)
+given a belief, which warrant?
+why: the proof term, walked
+Figure 9.1: The mode compass. Every question an institution asks of its own knowledge is
+a binding pattern of one relation—including the southern direction, whose demanded facts
+may not exist yet.
+9.3 East: backward, why as a traversal
+The backward mode is the one Chapter 1 mourned, and here it is trivial—and I want you to
+notice why it is trivial. “Why do we believe this?” is a moded lookup with the claim bound
+and the warrant sought, followed by a walk: warrant, to the evidence handles inside it, to
+the claims those rest on, recursively down to ground. The walk is a recursive traversal of the
+dependency relation—ancestor again! literally the same shape—and the proof term is not
+reconstructed, it is read, because Chapter 8 stored it. The question fifty years of sql could
+not represent became easy at the moment the store kept the derivation. It was never a hard
+question. It was a question asked of the wrong store.
+And its sibling, why not: run backward from an absent conclusion and the walk terminates
+at one of the four answers—and now the difference between refuted (here is the disproof)
+and unsigned (nobody ever checked; here is the docketed goal) is preserved all the way to
+the asker. Why-not over a two-valued store is archaeology. Over a four-valued store it is a
+lookup.
+Chapter 9. One Relation, Four Questions
+43
+9.4 West: counterfactual, gated not granted
+The western direction asks do(X = x) questions—what would happen if we set the discount,
+rather than merely observing it—and here the engine imports, whole, the discipline of the
+do-calculus [44]: intervention is not conditioning, and a counterfactual answer is licensed
+only when the causal structure identifies it. What the compiled machinery adds is where
+the gate lives. Identification is checked at compile time, like a type: the query names its
+intervention; the catalog holds the causal claims with their scopes and authorities; and if the
+identification fails—no adjustment set countersigned, a needed edge refuted or stale—the
+query does not run and say something fluent. It fails to compile, and it says why, and it
+says what missing warrant would fix it. Contrast the season’s other machines, which answer
+every counterfactual, in scope or out, with equal fluency and no gate at all (Chapter 1). A
+model that always answers is a model that cannot tell you when it shouldn’t. The gate is the
+feature.
+9.5 South: abductive, the question that exits
+And the fourth direction. Given a goal the catalog cannot establish, the abductive mode [38]
+returns what is missing: the set of unsigned claims which, if countersigned, would complete a
+derivation. Chapter 6 ended with demand arriving at an empty region and holding a shopping
+list; the southern mode is that shopping list, promoted to the query’s actual answer.
+Notice how much of the machinery simply carries over. The demanded missing facts are
+computed by the same inherited current, running past the boundary of what is stored. The
+candidates are constrained by the same typing—you may not abduce what is refuted, and
+there is the closed-world decree finally doing honest work: as a constraint on hypothesis, not
+a verdict on truth. What is genuinely new is that the answer’s satisfaction lies outside the
+database: someone must go establish the missing claims, in the world, with experiments that
+cost money.
+Which means the southern mode needs one thing no query mode has ever needed: a price
+list. That is the next chapter, and it is where the engine’s last output variable stops being
+data and becomes a decision.
+44
+9.5. South: abductive, the question that exits
+Chapter 10
+Lowering It Onto the Iron
+The profound thing turns out to be
+cheap.
+10.1 From semantics to machine
+Everything so far has been careful semantics, and semantics is lovely, but a book called
+The Compiled Question owes you the compiler. This chapter is the pipeline: what actually
+happens between a moded, authority-typed question at the top and columnar kernels at
+the bottom. The good news—and it is the design’s best news—is that the bottom of the
+pipeline is machinery your lakehouse already runs. We are not proposing new physics. We
+are proposing new plumbing to the existing physics, and Figure 10.1 is the whole of it on one
+page.
+10.2 Heads become columns, matching becomes vectors
+Start at the small end. Move one of Chapter 5 demoted unknownness to a domain point
+settled by pattern matching—so what is a pattern match, on columnar iron? It is a vectorized
+predicate. A clause head’s bound positions become filters over columns; the adjoined “not
+demanded” value becomes a null-like mask the engine already knows how to carry in a validity
+bitmap; and the case-split that replaced unification becomes a CASE kernel over thousands
+of rows per instruction burst. The most delicate object in Part Two—the single adjoined
+value—lowers onto the most ordinary object in the warehouse. I find that satisfying in the
+way good engineering is always satisfying: the profound thing turns out to be cheap.
+10.3 Recursion by deltas, demand by standing sets
+The recursive pair lowers next, and both currents land on prepared ground. The synthesized
+current’s fixpoint runs as semi-naïve iteration [15]—each round joins only the newly derived
+delta, which is precisely the discipline the incremental-view and differential-dataflow lines
+industrialized [39]. The inherited current runs as a standing demand set: a small, often
+cached, relation of currently demanded keys per stratum, which the storage layer treats as a
+semi-join reducer—partition pruning, file skipping, the whole stack of Chapter 6 [42]. Neither
+45
+46
+10.4. The new join generation
+moded question holdsm, authority-typed
+mode analysis + staging (Def. 4.1; [20, 25])
+lrec currents derived: inherited ∥ synthesized (Thm. 5.1)
+demand kernels:
+semi-joins, pruning, file skipping
+answer kernels:
+pattern match, project, hash/merge join
+fixpoint kernels: semi-naïve deltas, differential [15, 39]
+Delta tables: catalog strata, ledger, lineage [42]
+statistics, partitions: the physical mode costs
+cost feedback:
+mode family
+becomes cost model
+Figure 10.1: The compiled engine, top to bottom. Every box is compilation or execution;
+nothing in the diagram interprets. The dashed return path is the storage layer telling the
+compiler what each direction costs, which is how the mode family becomes a cost model.
+kernel is novel. What is novel is only their pairing, and the pairing came from the semantics,
+certified by Theorem 5.1, not from a rewriting you have to trust.
+10.4 The new join generation
+One development from the Datalog revival deserves its own station, because it upgrades
+the promise from the constant to the exponent.
+Classical planners execute a multiway join as a tree of pairwise joins, and for the cyclic
+patterns that recursion and graph questions generate, every pairwise plan can build inter
+mediate results asymptotically bigger than the final answer—you pay for a haystack to
+deliver a needle. The worst-case optimal join theorems [67] closed that gap: evaluate the
+join attribute-at-a-time and the running time is bounded by the answer’s worst-case size, full
+stop. Production engines made it real [68].
+For this engine the fit is doubly happy. Part Three’s workloads—warrant traversals, skele
+ton recursions, frontier assembly—are exactly the cyclic regime where worst-case optimality
+pays. And the inherited current composes with it instead of competing: demand prunes the
+relations first, the WCOJ kernel joins the pruned residue with guarantees, and together they
+let me state the book’s slogan with the theory behind both halves: the directed question costs
+its own size—in the constant, by pruning, and now in the exponent, by the join theorem.
+Chapter 10. Lowering It Onto the Iron
+47
+10.5 A surface you can actually adopt
+How does anyone use this without a forklift? Three surfaces, increasingly ambitious, all
+coexisting. First: the mode family compiles to views—ancestor_of(X), descendants_of(Y )—
+ordinary objects any sql client calls today, with the pairing hidden inside; adoption cost,
+zero. Second: a recursive-rule layer for the users who want to write the relation once—the
+Datalog-renaissance surface [40], compiled by this pipeline instead of interpreted. Third:
+the full moded-question interface of Chapter 9, authority annotations and all, which is what
+the agentic layer (Chapter 13) speaks. The migration path matters more than the syntax:
+every stage delivers value alone, and no stage demands you believe the later ones.
+10.6 The cost model is the mode family
+And the dashed arrow in Figure 10.1, which is my favorite part of the pipeline, because it
+closes a loop that the classical stack leaves embarrassingly open.
+An optimizer needs costs. This engine’s unit of costing is not the operator but the moded
+predicate: each member of a mode family has its own physical plan, whose cost the storage
+statistics price directly—this direction is a partition-pruned probe, pennies; that direction is
+a scan, dollars; the enumeration mode is a bulk job, schedule it. So the mode family, which
+began life in Chapter 4 as semantics, ends life as the cost model: a per-direction price list for
+every relation the institution owns. Ask the same question two ways and the compiler can
+tell you, before running either, which way is affordable.
+Keep that price list in view. The next chapter asks what happens when the cheapest
+direction of a question is still not answerable from what the store holds—and the price
+list grows a new column, whose units are not milliseconds but dollars, and whose rows are
+experiments.
+48
+10.6. The cost model is the mode family
+Chapter 11
+The Query That Bothers the World
+Sometimes the correct answer to a
+question is an experiment.
+11.1 Queries that terminate in the world
+We have arrived at the mode I have been promising since the preface, and I want to introduce
+it with the plainest sentence I can build:
+Sometimes the correct answer to a question is an experiment.
+Everybody knows this. Every scientist lives it. You ask whether the discount drives
+renewal; the data in hand cannot settle it; and the honest next move is not a cleverer scan
+of the same data—it is to go do something: run the holdout, mine the archive you never
+opened, call the customers. The question’s last mile runs through the world.
+And no query language has ever been able to say so. Ask sql a question the data cannot
+settle and it hands you an empty set, indistinguishable from “false.” Ask the season’s fluent
+models and they hand you a confident number, indistinguishable from knowledge. One shrugs,
+the other bluffs. What you want is a machine that says: I cannot derive this; here is precisely
+what is missing; here is what each way of getting it would cost; this one first. That machine
+is the abductive mode, compiled, and every part we need is already on the bench.
+11.2 From inference to syntax
+Abduction—inference to the missing premise—has a respectable logic-programming litera
+ture [38]: given a goal that fails, find the set of assumable facts which, if added, would let it
+succeed. Classically this ran on the same runtime machinery as everything else in Prolog,
+and inherited all of Chapter 3’s bills, plus new ones.
+Watch how the compiled setting tames it. The inherited current descends, as always,
+lighting the demanded region. Where the region is populated with countersigned claims,
+evaluation proceeds—this is just Chapter 9’s forward machinery. Where the demand arrives
+at unsigned—the fourth answer of Chapter 8—the classical engine would fail and backtrack.
+The abductive compilation does something better: it catches the unmet demand and records
+it. The demand current, remember, is data (Chapter 6). Unmet demand is therefore also
+49
+50
+11.3. Pricing it
+data: a set of typed open goals, each one saying exactly which claim, at which scope, the
+derivation needs.
+That set is the frontier, and the frontier is the query’s answer. Not a failure report. The
+answer: “your goal is derivable modulo these.” The discipline writes itself from the four-valued
+typing. You may assume what is unsigned—that is what unsigned means. You may not
+assume what is refuted: the closed-world instinct, finally doing honest work as a constraint
+on hypothesis rather than a decree about truth. Stale claims enter dimmed, carrying their
+re-verification cost. The frontier that emerges is not a wish list; it is a typed, admissible one.
+11.3 Pricing it
+A frontier with three open goals poses a decision problem: which to close first? And here the
+mode-family cost model of Chapter 10 grows its new column. Each open goal has channels
+by which it might be closed—mine the data you already own but never read; commission an
+experiment; buy the dataset; transport a finding from an adjacent scope, if the transport
+is licensed. Each channel has a cost, a latency, and a probability of actually resolving the
+goal. And each resolution has a value: the decision downstream that goes differently once
+the answer exists.
+Order the channels by expected value of information per dollar, and the frontier stops
+being a list and becomes a plan.
+I want to give the number its provenance, because it is older than every system in this
+book and it has been waiting seventy years for this plumbing. Lindley, 1956: the information
+provided by an experiment is the expected reduction in uncertainty about the quantity
+of interest [69]. The decision theorists converted it to currency—the expected value of
+information, the difference between deciding with and without the answer [45, 46]. Bayesian
+experimental design, the whole field, presupposed two things enterprises never had: a declared
+space of candidate experiments, and quantified priors. Look at what the catalog holds.
+The open goals are the declared space. The countersigned intervals are the priors. The
+seventy-year-old number was never missing its theory; it was missing its address book—the
+place where an institution’s actual questions live. The originality here is the plumbing, and I
+am content with that, because plumbing is what makes theories true in buildings.
+11.4 The loop, closed
+Now assemble the whole circuit (Figure 11.1). A goal is posed and cannot be derived. The
+abductive mode returns its frontier, voi-priced. The top channel is commissioned—a job
+enters a queue; some jobs are compute (mine the ledger), some are world (run the holdout).
+The world answers; the evidence lands in the ledger; a verdict is issued; the once-open claim
+is countersigned. And the original query—the same query—re-derives, and now it succeeds,
+and its proof term includes the experiment.
+Every station of this loop was built, as institutional machinery, in the previous volume [78].
+What this volume adds is the demotion that makes it inevitable: the loop is not a workflow
+bolted beside the database. It is query evaluation, continued past the boundary of the
+Chapter 11. The Query That Bothers the World
+51
+goal posed
+needed conclusion, typed
+abductive frontier
+open claims returned, voi-priced
+verdict issued
+proof term completed,
+goal re-derived
+commissioned
+experiment or mining job
+enters the queue
+the world answers
+push executed, ledger extended
+the abductive mode: a query whose last mile is an intervention
+Figure 11.1: The commissioning loop, which is just what evaluation means once the store is
+honest about what it doesn’t hold. The previous volume built every station [78]; this volume
+supplies the grammar in which the loop is a query.
+store, under the same typing, with the same demand current doing the work—the question
+descending, as always, except now the bottom of its descent is a laboratory.
+And there is the answer to the preface’s puzzle, the one I fumbled. Why was the 1992
+chapter not “history”? Because the inherited current—the question, descending—turned out
+to descend all the way out of the machine. A construction for compiling queries became,
+pointed at an honest store, a machine for deciding what an institution should find out next.
+No one plans an outcome like that. You just keep the derivation, follow the demand, and
+refuse to fool yourself, and the machine walks out the door on its own.
+52
+11.4. The loop, closed
+Chapter 12
+One Question, Run Four Ways: An Af
+ternoon
+Same company, same data, same
+afternoon. The difference is not
+intelligence. The difference is that the
+questions had somewhere to run.
+12.1 The scene
+Theory earns its keep on a Tuesday, so here is a Tuesday.
+The company sells software. The catalog—the honest store of Chapter 8—holds, among a
+few hundred thousand typed claims, one that matters this afternoon:
+“Discount depth drives renewal probability; effect +4 to +7 points; scope: en
+terprise tier, North America, FY2024–25; status: countersigned; proof term
+attached.”
+One relation, at bottom: holds(C,W). Four people are about to ask it four questions,
+and every one of them is a binding pattern. Watch the afternoon.
+12.2 Two o’clock: the planner, forward
+The revenue planner needs next quarter’s renewal forecast. Her question is forward, (+,-):
+given the countersigned claims in scope, what follows for the enterprise book of business?
+The compiled forward mode does what Chapter 9 promised. Demand descends: her
+question’s scope—enterprise, NA, current—lights the catalog’s relevant cone and not one
+claim more; the lakehouse prunes to it (Chapter 6). Consequences ascend, typed: the forecast
+arrives as an interval, not a point, because the discount edge carries +4–7, and intervals
+compose; and it arrives with a scope, because scopes intersect. One input claim was stale—a
+pricing-model dependency moved last month—so the whole forecast comes back dimmed,
+with the ledger entry that dimmed it one click away. She ships the forecast with its authority
+attached. Total cost: a demand cone over a few thousand claims. Milliseconds.
+53
+54
+12.3. Three o’clock: the auditor, backward
+12.3 Three o’clock: the auditor, backward
+An auditor—regulatory, external, unamused—asks: why does the forecast assume discounts
+lift renewal?
+Chapter 1 spent pages on how this question dies against a classical stack: a person
+reconstructs it from memory, from tribal knowledge, in a meeting. Here it is mode (-,+):
+conclusion bound, warrant sought. The proof term is not reconstructed—it is read (the
+store kept it), and walked: the countersigned edge; the holdout experiment behind it, with
+its design and its data handles; the two upstream claims that experiment leaned on; their
+verdicts; ground. The walk is the ancestor recursion of Part Two running over the dependency
+relation, demand-pruned to the one derivation. The auditor gets a chain with signatures
+at every link. Nobody attends a meeting. Milliseconds again—and this is the question the
+industry currently cannot answer at any price.
+12.4 Four o’clock: the agent at the gate
+An autonomous pricing agent—the season’s kind, wired to act—proposes: cut enterprise
+discounts 8% in EMEA; the model predicts renewal holds.
+That is a counterfactual, do(discount), and it hits the western gate of Chapter 9. Compile
+time check: is the intervention’s effect identified, in scope, from countersigned claims? The
+discount–renewal edge is countersigned for North America. EMEA is a different scope; no
+transport claim licenses the carry-over [44]; the agent’s fluent model, of course, predicted
+confidently anyway—fluency is what it manufactures (Chapter 1).
+The gate does not run the query and argue with the number. The query fails to compile,
+with a diagnosis: unlicensed scope transfer; missing claim: transportability of the discount
+effect, NA→EMEA. The agent is not smarter than the model. It is blocked, which is better,
+and the block names its price: one missing claim.
+12.5 Five o’clock: the question leaves the building
+So the pricing lead asks the fourth question, the southern one: what would it take to know
+whether the discount effect transports to EMEA?
+Mode (-,-), abductive, open. The inherited current descends past the edge of what is stored
+and returns the frontier (Chapter 11): one open goal—the transport claim—closable by three
+channels. Mine two years of EMEA renewal data already in the lakehouse, never analyzed
+for this: cheap, moderate power. Commission a proper EMEA holdout: expensive, slow,
+definitive. Transport with assumptions from the UK sub-segment where a small countersigned
+study exists: cheapest, weakest. Each channel priced, voi per dollar, against the value sitting
+behind the gate: an agent that could safely reprice a continent [69, 45].
+The lead commissions the mining job before leaving the office. It runs overnight. The
+verdict lands Thursday; the transport claim signs Friday; the agent’s counterfactual compiles
+Monday and the repricing ships with a proof term that ends, several links down, in a decision
+made at five o’clock on a Tuesday.
+Chapter 12. One Question, Run Four Ways: An Afternoon
+55
+12.6 The same afternoon, without the engine
+Run the control experiment in your head, because the contrast is the argument. Forward:
+a forecast as a point estimate, authority unknown, staleness silent. Backward: three weeks
+of archaeology and a meeting. The gate: there is no gate—the agent reprices EMEA on a
+fluent extrapolation, and the cost of discovering the scope error is denominated in churned
+customers, next quarter, attributed to the market. Abductive: the question is never asked,
+because there is nowhere to ask it; “what should we find out?” remains a slide in a strategy
+deck, unpriced.
+Same company, same data, same afternoon. The difference is not intelligence. The
+difference is that the questions had somewhere to run.
+12.7 The accounting
+Four questions. One relation. Four modes of it, each compiled to its own cost by Part Two’s
+machinery: two demand cones in milliseconds, one compile-time rejection costing nothing at
+all—the cheapest prevented catastrophe in the building’s history—and one query whose last
+mile was a mining job and whose answer arrived Thursday.
+That is the machine. Not a smarter oracle—a grammar, with a compiler, and a gate, and
+a door to the world. The last chapter asks what it costs and what it earns, and then I will
+let you go.
+56
+12.7. The accounting
+Chapter 13
+The Bill, the Timing, and What to
+Build Monday
+13.1 Why now
+Doctrine costs nothing until it is a work
+order.
+A design argued across twelve chapters owes you an account of its timing, and this one writes
+itself from the market’s own receipts.
+In the eight weeks before this book went to press, the industry priced the forward pass
+over enterprise tables at roughly a billion and a half dollars: SAP committed to the TabPFN
+line [48, 50]; Nvidia bought the relational foundation models [51, 49]; Google wired a zero-shot
+tabular model into warehouse sql [52]. Prior-fitted transformers that amortize Bayesian
+prediction into a forward pass [47], one keyword away from every analyst on earth. That is
+the season.
+Now apply this book’s one distinction to the season’s shopping list. Everything purchased
+runs forward: data in, prognosis out, fluent, instant, remarkable. Every question family
+that Chapter 1 catalogued—the why, the what-would-establish-it, the what-is-missing—runs
+backward, and here is the asymmetry the market has not priced yet: the backward machinery
+is not a model you train. It is an engine you compile—modes, currents, proof walks, priced
+frontiers. The season has commoditized fluent prognosis, and by doing so it has made the
+directed question the scarcest object in the stack. When everyone owns the same oracle, the
+differential asset is knowing which of its utterances your institution can stand behind—and
+that is a warrant question, and warrant questions run backward, and you now know exactly
+what runs backward questions at scale.
+13.2 The engine is the backward-pass product
+Say the composition plainly, because it is a partnership, not a war. The foundation models are
+magnificent generators: proposal machinery at machine speed, hypotheses by the thousand,
+priors amortized into silicon. The engine of this book is the verifier’s infrastructure: the
+typed store, the gate, the proof walk, the frontier. Generator and verifier; the season built
+57
+58
+13.3. Objections, answered
+one and left the other silent; a two-hundred-page specification of the silence is what you have
+been reading.
+The models propose. The engine types. Neither replaces the other, and the institution
+that wires them together gets the only loop that compounds: fluent hypothesis, gated action,
+priced ignorance, commissioned experiment, countersigned knowledge, better hypothesis.
+13.3 Objections, answered
+Three objections meet this design in every architecture review. Each gets its steelman and
+its answer, short.
+“The foundation models will just do this.” At prediction, nothing here competes and
+nothing here tries. But the engine’s cargo is not prediction—it is warrant plumbing,
+and fluency is not plumbing. A model that answers the backward question in beautiful
+prose, with no proof store to walk, has performed Chapter 1’s paraphrase with better
+tailoring. The bamboo tower, upgraded to teak, is still not a control tower [75].
+“Recursive CTEs already give us recursion.” They do—as un-moded, un-demanded
+fixpoints: precisely the configuration Chapter 7 showed computing worlds to answer
+neighborhoods, with no derivation record and no types. The CTE concedes the need
+and disputes only the ambition.
+“Graph databases are multidirectional already.” The traversal languages [72] run
+edges both ways and kept the need honorably visible through the relational decades.
+But a traversal is a forward program over stored edges—direction of walking, not of
+questioning. No modes over authored rules, no demand compilation, no proof terms,
+no frontier. A compass is not a vehicle.
+13.4 What to build Monday
+Doctrine costs nothing until it is a work order, so: the adoption path, in the order the value
+arrives, each stage standing alone.
+WO1. The proof-carrying catalog on the lakehouse you have—claims, verdicts, depen
+dencies as ordinary Delta tables (Chapter 8). This is schema work, not research, and
+the backward mode over it is a recursive view. The auditor’s three-o’clock question
+becomes answerable in the first quarter, and it alone funds the program.
+WO2. The moded views (Chapter 10): mode families compiled to ordinary callable
+objects, demand sets as standing semi-join reducers. Your BI tools cannot tell the
+difference, except that the recursive questions stopped costing the universe.
+WO3. The gate: counterfactual queries type-checked against countersigned causal claims
+before any agent acts [44]. The week the gate blocks its first fluent extrapolation,
+print the diagnosis and frame it.
+Chapter 13. The Bill, the Timing, and What to Build Monday
+59
+WO4. The frontier and the loop (Chapter 11): unmet demand caught, priced, docketed,
+commissioned. This is the stage where the machine starts deciding what the institution
+should find out next, and the R&D budget acquires, for the first time, a query interface.
+13.5 What was compiled
+And that is the book, so let me fold it small enough for a pocket.
+sql runs one way, and the questions that matter run the other. Prolog ran every
+way and priced itself out by deciding directions at runtime. The direction was static all
+along—it is sitting in the query—and compiling it splits every question into two currents:
+answers ascending, demand descending, no unification surviving to runtime. The industry
+rediscovered the demand half by hand and called it magic, which is what you call a mechanism
+you don’t have the theory for. Pointed at an honest store—claims with warrants, four answers
+to a lookup—the compiled question becomes an institutional faculty: forward with types,
+backward as a walk, counterfactual with a gate, and abductive with a price list, the query
+whose last mile is a laboratory.
+The season bought the forward pass. The backward pass was specified in 1992, in a
+dissertation everyone filed under history, including, briefly, embarrassingly, me. It is not
+history. It is the other half of the object—the positron leg of the diagram—and the whole
+argument of this book is that when you find a line running backward through your theory,
+you do not erase it. You ask what it is telling you. Then you build the machine.
+60
+13.5. What was compiled
+Appendix A
+The Whole Book on a Few Index Cards
+I never trusted a theory I couldn’t fold up small, so here is the book, folded. Nothing on
+these cards is new; if a card surprises you, the chapter it points to is where the surprise gets
+earned.
+A.1 Modes and adornment
+A mode for an n-ary relation is m ∈ {+,−}n (Definition 4.1); an authority-indexed mode
+adds the minimum epistemic state a ∈ {exploratory,countersigned,countersigned-current}
+(Chapter 9). Adornment propagates groundness through rule bodies left to right, or by
+any admissible reordering (Chapter 4): a body atom’s derived mode binds every position
+reachable from bound head positions and prior body bindings. Declared modes are checked;
+undeclared ones are inferred by abstract interpretation over the call corpus [59, 58] and
+surfaced for adoption by traffic rank.
+A.2 The compiled currents
+Per relation and mode, the lrec solution (Theorem 5.1) yields the inherited family (demand:
+seeded by the call’s bound values; one equation per recursive site; lowered as semi-joins,
+pruning predicates, and constructor matches) and the synthesized family (answers: one
+equation per clause; lowered as filters, projections, joins, and unions). Evaluation disciplines,
+chosen per query shape: lazy interleaving [27]; semi-naïve fixpoint [15]; worst-case-optimal
+kernels for cyclic patterns [67]; differential maintenance for standing questions [39]. Fusion
+across levels and currents per [73]; staging per question shape per [25].
+A.3 Answer values and their duties
+Every lookup returns one of four values, each with a mandatory payload: established
+(interval, scope, proof-term handle); refuted (the disproof’s handle; hard-blocks licensing);
+stale (the staling ledger entry; queue position; dims consequences, blocks licenses); open
+(docket entry; decision-value weight). The closed-world rule [13] is admitted only per stratum,
+by declaration, where closure was actually purchased; negation-as-failure [14] is licensed only
+inside such strata. Anywhere else, “absent” means open, and saying otherwise is how you
+fool yourself.
+61
+62
+A.4 The four modes, operationally
+Forward: consequence under scope intersection (narrowest scope on the derivation) and
+state weakening (weakest state on any path). Backward: total over the established stratum;
+demand refinements select warrant aspects (designs, magnitudes, currency, siblings); at the
+boundary, returns the open goal. Counterfactual: gated by the identification license at the
+claim’s grain and scope [44]; ungated instances degenerate to abduction—the machine’s way
+of saying “I’d have to find out.” Abductive: returns frontiers—minimal completions over
+the open stratum—gated by type, consistency (no completion may contradict the refuted
+stratum), and establishability (every goal carries an admissible channel or is returned as
+obstructed, with the obstruction named); frontiers ordered by expected information per
+cost [69, 45, 46].
+A.5 Cost classes of a mode
+Per mode, the planner assigns one of: materialized (stored stratum); indexed (+ positions
+align with partition or clustering keys); scan-shaped (demand-pruned scans; cost tracks the
+lit region); fixpoint-shaped (priced by expected rounds and delta widths); infeasible-from
+store (sought positions range over absent evidence; the plan’s residual is an abductive frontier).
+The mode family with its cost classes is the relation’s public performance contract—and, at
+the last class, its epistemic one.
+A.6 Conformance, so the word means something
+Bronze: moded declarations with per-mode compilation on non-recursive relations; four
+valued answers surfaced. Silver: Bronze, plus compiled recursion with demand (magic
+equivalent or better), the backward mode total over the catalog, staleness propagation
+standing. Gold: Silver, plus the gated counterfactual surface, the abductive surface wired
+to the commissioning queue, and differential maintenance of standing questions. Anything
+below Bronze that borrows this vocabulary is a paraphrase engine with a bibliography, and
+you should say so in the review.
+Coda: The Line That Runs Backward
+Every book in this corpus ends by standing in the room it built, and this room is small and
+load-bearing: an engine room.
+The walls were up before we got here. Codd gave the world declarative answers and,
+without anyone quite voting on it, fixed their direction forever [1]. Marseille set the questions
+free and priced the freedom in unification [10, 7]. The database world kept the scale and lost
+the modes, then spent a decade forging the lost half by hand and named it after stagecraft [22].
+And a 1992 dissertation, written about logic programs when “lakehouse” was not a word,
+showed the whole dilemma to be an artifact of postponement: adjoin one value, solve the
+recursion as a pair, and the question’s two currents—demand descending, answers ascending—
+become ordinary programs, total and fast [33]. Thirty-four years in a drawer, and the drawer,
+it turns out, was labeled wrong.
+I know. I labeled it.
+What this book added is the destination the currents deserved. Pointed at ordinary tables,
+the compiled question is an optimization—a good one; take it. Pointed at an honest store, it
+is the thing the deductive tradition reached for at its founding and never held: a knowledge
+base whose every direction runs. Consequence forward, with types. Warrant backward, as a
+walk. Intervention gated, at compile time, before the fluent number does its damage. And
+absence—absence, at last, articulate: not an empty result set but a priced question, handed
+to the world, with the world’s answer wired to come back as proof.
+I keep thinking about the backward line, the one in the diagrams. For a while everyone
+treated it as a disease of the formalism—a particle going the wrong way in time, an em
+barrassment to be gauged away. The resolution was not to erase the line. The resolution
+was to understand that the line was a particle too, the other half of one object, and the
+moment physics accepted that, the pictures got simpler and the calculations started coming
+out right [74, 77]. Fifty years of data systems have been erasing their backward line—filing it
+under provenance, under governance, under magic, under somebody’s memory of why the
+number is what it is. This book’s whole argument is four words long: keep the backward
+line. It is not a pathology. It is the question, and the question was always half of the object.
+And if you want the entire engine as one sentence, take the oldest one, the one that has
+been load-bearing since before there were computers to compile anything: you must not fool
+yourself, and you are the easiest person to fool. Everything in this book—the modes, the
+currents, the four-valued lookup, the gate, the priced frontier—is that sentence, built. A
+machine for an institution that would rather know how it knows than sound like it knows.
+Nature cannot be fooled [76]; the ledger is how you stop trying.
+The equations held. The question compiled. Now go ask it backward.
+—B.A. & C.
+Portland · Belgrade · the context window
+July 2026
+63
+64
+Bibliography
+[1] E. F. Codd. A relational model of data for large shared data banks. Communications of
+the ACM, 13(6):377–387, 1970.
+[2] D. D. Chamberlin and R. F. Boyce. SEQUEL: a structured English query language. In
+Proceedings of the ACM SIGFIDET Workshop on Data Description, Access and Control,
+1974.
+[3] P. G. Selinger, M. M. Astrahan, D. D. Chamberlin, R. A. Lorie, and T. G. Price. Access
+path selection in a relational database management system. In Proceedings of the ACM
+SIGMOD International Conference on Management of Data, 1979.
+[4] T. J. Green, G. Karvounarakis, and V. Tannen. Provenance semirings. In Proceedings
+of the 26th ACM Symposium on Principles of Database Systems (PODS), 2007.
+[5] P. Buneman, S. Khanna, and W.-C. Tan. Why and where: a characterization of data
+provenance. In Proceedings of the 8th International Conference on Database Theory
+(ICDT), 2001.
+[6] J. Cheney, L. Chiticariu, and W.-C. Tan. Provenance in databases: why, how, and where.
+Foundations and Trends in Databases, 1(4):379–474, 2009.
+[7] J. A. Robinson. A machine-oriented logic based on the resolution principle. Journal of
+the ACM, 12(1):23–41, 1965.
+[8] R. A. Kowalski. Predicate logic as programming language. In Proceedings of IFIP
+Congress 74, North-Holland, 1974.
+[9] R. A. Kowalski. Algorithm = logic + control. Communications of the ACM, 22(7):424
+436, 1979.
+[10] A. Colmerauer and P. Roussel. The birth of Prolog. In History of Programming
+Languages—II, ACM Press, 1996.
+[11] M. H. van Emden and R. A. Kowalski. The semantics of predicate logic as a programming
+language. Journal of the ACM, 23(4):733–742, 1976.
+[12] H. Gallaire and J. Minker, editors. Logic and Data Bases. Plenum Press, 1978.
+[13] R. Reiter. On closed world data bases. In H. Gallaire and J. Minker, editors, Logic and
+Data Bases, Plenum Press, 1978.
+[14] K. L. Clark. Negation as failure. In H. Gallaire and J. Minker, editors, Logic and Data
+Bases, Plenum Press, 1978.
+[15] J. D. Ullman. Principles of Database and Knowledge-Base Systems, Volume I. Computer
+Science Press, 1988.
+65
+66
+Bibliography
+[16] S. Ceri, G. Gottlob, and L. Tanca. What you always wanted to know about Datalog
+(and never dared to ask). IEEE Transactions on Knowledge and Data Engineering,
+1(1):146–166, 1989.
+[17] D. H. D. Warren. An abstract Prolog instruction set. Technical Note 309, SRI Interna
+tional, 1983.
+[18] H. Aït-Kaci. Warren’s Abstract Machine: A Tutorial Reconstruction. MIT Press, 1991.
+[19] T. Swift and D. S. Warren. XSB: extending Prolog with tabled logic programming.
+Theory and Practice of Logic Programming, 12(1–2):157–187, 2012.
+[20] Z. Somogyi, F. Henderson, and T. Conway. The execution algorithm of Mercury, an
+efficient purely declarative logic programming language. Journal of Logic Programming,
+29(1–3):17–64, 1996.
+[21] J. Jaffar and J.-L. Lassez. Constraint logic programming. In Proceedings of the 14th
+ACM Symposium on Principles of Programming Languages (POPL), 1987.
+[22] F. Bancilhon, D. Maier, Y. Sagiv, and J. D. Ullman. Magic sets and other strange ways
+to implement logic programs. In Proceedings of the 5th ACM Symposium on Principles
+of Database Systems (PODS), 1986.
+[23] C. Beeri and R. Ramakrishnan. On the power of magic. Journal of Logic Programming,
+10(3–4):255–299, 1991.
+[24] Y. Futamura. Partial evaluation of computation process—an approach to a compiler
+compiler. Systems, Computers, Controls, 2(5):45–50, 1971.
+[25] N. D. Jones, C. K. Gomard, and P. Sestoft. Partial Evaluation and Automatic Program
+Generation. Prentice Hall, 1993.
+[26] D. E. Knuth. Semantics of context-free languages. Mathematical Systems Theory,
+2(2):127–145, 1968.
+[27] T. Johnsson. Attribute grammars as a functional programming paradigm. In Proceedings
+of the Conference on Functional Programming Languages and Computer Architecture
+(FPCA), LNCS 274, Springer, 1987.
+[28] G. D. Plotkin. Call-by-name, call-by-value and the λ-calculus. Theoretical Computer
+Science, 1(2):125–159, 1975.
+[29] J. C. Reynolds. The discoveries of continuations. LISP and Symbolic Computation,
+6(3–4):233–247, 1993.
+[30] C. Strachey and C. P. Wadsworth. Continuations: a mathematical semantics for handling
+full jumps. Higher-Order and Symbolic Computation, 13(1–2):135–152, 2000. Originally
+Oxford PRG Technical Monograph PRG-11, 1974.
+Bibliography
+67
+[31] E. Moggi. Notions of computation and monads. Information and Computation, 93(1):55
+92, 1991.
+[32] R. B. Kieburtz, B. Agapiev, and J. Hook. Three monads for continuations. In Proceedings
+of the ACM SIGPLAN Workshop on Continuations, 1992.
+[33] B. Agapiev. Translation of Logic Programs into Functional Languages. PhD dissertation,
+Oregon Graduate Institute of Science and Technology, 1992.
+[34] M. Escardó and P. Oliva. Selection functions, bar recursion and backward induction.
+Mathematical Structures in Computer Science, 20(2):127–168, 2010.
+[35] P.-L. Curien and H. Herbelin. The duality of computation. In Proceedings of the 5th
+ACM SIGPLAN International Conference on Functional Programming (ICFP), 2000.
+[36] T. Crolard. Subtractive logic. Theoretical Computer Science, 254(1–2):151–185, 2001.
+[37] B. A. Pearlmutter and J. M. Siskind. Reverse-mode AD in a functional framework:
+Lambda the ultimate backpropagator. ACM Transactions on Programming Languages
+and Systems, 30(2):1–36, 2008.
+[38] A. C. Kakas, R. A. Kowalski, and F. Toni. Abductive logic programming. Journal of
+Logic and Computation, 2(6):719–770, 1992.
+[39] F. McSherry, D. G. Murray, R. Isaacs, and M. Isard. Differential dataflow. In Proceedings
+of the 6th Biennial Conference on Innovative Data Systems Research (CIDR), 2013.
+[40] T. J. Green, S. S. Huang, B. T. Loo, and W. Zhou. Datalog and recursive query
+processing. Foundations and Trends in Databases, 5(2):105–195, 2013.
+[41] H. Jordan, B. Scholz, and P. Subotić. Soufflé: on synthesis of program analyzers. In
+Proceedings of the 28th International Conference on Computer Aided Verification (CAV),
+2016.
+[42] M. Armbrust, T. Das, et al. Delta Lake: high-performance ACID table storage over
+cloud object stores. Proceedings of the VLDB Endowment, 13(12):3411–3424, 2020.
+[43] M. Armbrust, A. Ghodsi, R. Xin, and M. Zaharia. Lakehouse: a new generation of open
+platforms that unify data warehousing and advanced analytics. In Proceedings of the
+11th Conference on Innovative Data Systems Research (CIDR), 2021.
+[44] J. Pearl. Causality: Models, Reasoning, and Inference. Cambridge University Press, 2nd
+edition, 2009.
+[45] H. Raiffa and R. Schlaifer. Applied Statistical Decision Theory. Division of Research,
+Harvard Business School, 1961.
+[46] R. A. Howard. Information value theory. IEEE Transactions on Systems Science and
+Cybernetics, SSC-2(1):22–26, 1966.
+68
+Bibliography
+[47] S. Müller, N. Hollmann, S. Pineda Arango, J. Grabocka, and F. Hutter. Transformers can
+do Bayesian inference. In Proceedings of the 10th International Conference on Learning
+Representations (ICLR), 2022.
+[48] N. Hollmann, S. Müller, L. Purucker, A. Krishnakumar, M. Körfer, S. B. Hoo,
+R. T. Schirrmeister, and F. Hutter. Accurate predictions on small data with a tabular
+foundation model. Nature, 637:319–326, 2025.
+[49] M. Fey, W. Hu, K. Huang, J. E. Lenssen, R. Ranjan, J. Robinson, R. Ying, J. You,
+and J. Leskovec. Position: relational deep learning—graph representation learning on
+relational databases. In Proceedings of the 41st International Conference on Machine
+Learning (ICML), 2024.
+[50] SAP SE. SAP to acquire Prior Labs, committing over €1 billion to establish a frontier
+AI lab for tabular foundation models; Dremio acquired in the same week. Corporate
+announcement, May 4, 2026.
+[51] J. Kahn et al. Nvidia acquires Kumo AI, developer of the KumoRFM relational
+foundation model, for a reported $400 million. Fortune / The Information, June 3, 2026.
+[52] Google Research. Introducing TabFM: a zero-shot foundation model for tabular data.
+Google Research Blog, June 30, 2026.
+[53] F. Bancilhon and N. Spyratos. Update semantics of relational views. ACM Transactions
+on Database Systems, 6(4):557–575, 1981.
+[54] J. N. Foster, M. B. Greenwald, J. T. Moore, B. C. Pierce, and A. Schmitt. Combinators
+for bidirectional tree transformations: a linguistic approach to the view-update problem.
+ACM Transactions on Programming Languages and Systems, 29(3), 2007.
+[55] C. Green. Application of theorem proving to problem solving. In Proceedings of the 1st
+International Joint Conference on Artificial Intelligence (IJCAI), 1969.
+[56] E. A. Feigenbaum and P. McCorduck. The Fifth Generation: Artificial Intelligence and
+Japan’s Computer Challenge to the World. Addison-Wesley, 1983.
+[57] H. Tamaki and T. Sato. OLD resolution with tabulation. In Proceedings of the 3rd
+International Conference on Logic Programming (ICLP), LNCS 225, Springer, 1986.
+[58] S. K. Debray and D. S. Warren. Automatic mode inference for logic programs. Journal
+of Logic Programming, 5(3):207–229, 1988.
+[59] P. Cousot and R. Cousot. Abstract interpretation: a unified lattice model for static
+analysis of programs by construction or approximation of fixpoints. In Proceedings of
+the 4th ACM Symposium on Principles of Programming Languages (POPL), 1977.
+[60] R. S. Bird. Using circular programs to eliminate multiple traversals of data. Acta
+Informatica, 21:239–250, 1984.
+Bibliography
+69
+[61] P. Henderson and J. H. Morris. A lazy evaluator. In Proceedings of the 3rd ACM
+Symposium on Principles of Programming Languages (POPL), 1976.
+[62] J. Hughes. Why functional programming matters. The Computer Journal, 32(2):98–107,
+1989.
+[63] A. Mycroft. The theory and practice of transforming call-by-need into call-by-value. In
+Proceedings of the 4th International Symposium on Programming, LNCS 83, Springer,
+1980.
+[64] S. L. Peyton Jones. Implementing lazy functional languages on stock hardware: the
+Spineless Tagless G-machine. Journal of Functional Programming, 2(2):127–202, 1992.
+[65] G. Graefe. Volcano—an extensible and parallel query evaluation system. IEEE Transac
+tions on Knowledge and Data Engineering, 6(1):120–135, 1994.
+[66] R. Ramakrishnan. Magic templates: a spellbinding approach to logic programs. Journal
+of Logic Programming, 11(3–4):189–216, 1991.
+[67] H. Q. Ngo, E. Porat, C. Ré, and A. Rudra. Worst-case optimal join algorithms. Journal
+of the ACM, 65(3), 2018.
+[68] M. Aref, B. ten Cate, T. J. Green, B. Kimelfeld, D. Olteanu, E. Pasalic, T. L. Veldhuizen,
+and G. Washburn. Design and implementation of the LogicBlox system. In Proceedings
+of the ACM SIGMOD International Conference on Management of Data, 2015.
+[69] D. V. Lindley. On a measure of the information provided by an experiment. Annals of
+Mathematical Statistics, 27(4):986–1005, 1956.
+[70] J. Doyle. A truth maintenance system. Artificial Intelligence, 12(3):231–272, 1979.
+[71] J. de Kleer. An assumption-based TMS. Artificial Intelligence, 28(2):127–162, 1986.
+[72] R. Angles and C. Gutierrez. Survey of graph database models. ACM Computing Surveys,
+40(1), 2008.
+[73] P. Wadler. Deforestation: transforming programs to eliminate trees. Theoretical Com
+puter Science, 73(2):231–248, 1990.
+[74] R. P. Feynman. The theory of positrons. Physical Review, 76(6):749–759, 1949.
+[75] R. P. Feynman. Cargo cult science. Engineering and Science, 37(7):10–13, 1974.
+[76] R. P. Feynman. Personal observations on the reliability of the Shuttle. Appendix F of
+the Report of the Presidential Commission on the Space Shuttle Challenger Accident,
+1986.
+[77] E. C. G. Stueckelberg. Remarque à propos de la création de paires de particules en
+théorie de relativité. Helvetica Physica Acta, 14:588–594, 1941.
+70
+Bibliography
+[78] B. Agapiev and Claude. The Countersigned Lever: Causal Authority in the Lakehouse.
+Collaborative Consciousness Corpus, 2026.
+[79] B. Agapiev and Claude. The Coexponential Correspondence: Transformers and the
+Duality of Computation. Collaborative Consciousness Corpus, 2025.
